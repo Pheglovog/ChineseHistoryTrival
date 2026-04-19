@@ -1,0 +1,68 @@
+name: huaxia_footprint
+description: "华夏足迹 - 踏寻千年足迹，穿越历史地理"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # State management
+  flutter_riverpod: ^2.6.1
+  riverpod_annotation: ^2.6.1
+
+  # Database (Drift/SQLite)
+  drift: ^2.24.0
+  sqlite3_flutter_libs: ^0.5.0
+
+  # Map (AMap)
+  amap_map: ^1.0.0
+
+  # Routing
+  go_router: ^14.8.0
+
+  # Code generation / immutable models
+  freezed_annotation: ^2.4.4
+  json_annotation: ^4.9.0
+
+  # Network
+  dio: ^5.7.0
+
+  # Local storage
+  shared_preferences: ^2.3.0
+
+  # UI utilities
+  google_fonts: ^6.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+  # Code generation
+  build_runner: ^2.4.14
+  drift_dev: ^2.24.0
+  riverpod_generator: ^2.6.3
+  freezed: ^2.5.7
+  json_serializable: ^6.9.4
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/data/
+
+  fonts:
+    - family: NotoSerifSC
+      fonts:
+        - asset: assets/fonts/NotoSerifSC-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/NotoSerifSC-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/NotoSerifSC-Light.ttf
+          weight: 300

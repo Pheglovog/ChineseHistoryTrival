@@ -1,0 +1,46 @@
+[project]
+name = "huaxia-footprint-backend"
+version = "0.1.0"
+description = "华夏足迹后端服务 - AI Agent + FastAPI"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.34.0",
+    "sqlalchemy>=2.0.36",
+    "asyncpg>=0.30.0",
+    "alembic>=1.14.0",
+    "pydantic>=2.10.0",
+    "pydantic-settings>=2.7.0",
+    "redis>=5.2.0",
+    "langchain>=0.3.0",
+    "langchain-core>=0.3.0",
+    "langchain-community>=0.3.0",
+    "langgraph>=0.2.0",
+    "httpx>=0.28.0",
+    "python-multipart>=0.0.18",
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+    "celery>=5.4.0",
+    "minio>=7.2.0",
+    "websockets>=14.0",
+    "prometheus-client>=0.21.0",
+    "structlog>=24.0.0",
+    "geoalchemy2>=0.16.0",
+    "shapely>=2.0.0",
+]
+
+[project.optional-dependencies]
+ai = [
+    "diffusers>=0.32.0",
+    "transformers>=4.47.0",
+    "torch>=2.5.0",
+    "controlnet-aux>=0.0.9",
+    "insightface>=0.7.3",
+    "onnxruntime>=1.20.0",
+]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.24.0",
+    "httpx>=0.28.0",
+    "ruff>=0.8.0",
+]

@@ -1,0 +1,1940 @@
+{
+  "seedVersion": 1,
+  "dynasty": {
+    "name": "汉朝",
+    "nameEn": "Han Dynasty",
+    "startYear": -202,
+    "endYear": 220,
+    "subPeriod": "西汉/东汉",
+    "description": "中国历史上第二个大一统王朝，分为西汉与东汉两个时期"
+  },
+  "locations": [
+    {
+      "name": "司隶校尉部",
+      "alias": "司隶",
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "京畿地区，直属中央",
+      "yearEstablished": -106,
+      "historicalSignificance": "汉代京畿重地，包含都城长安与洛阳",
+      "modernMatch": {
+        "name": "西安市",
+        "province": "陕西省",
+        "latitude": 34.26,
+        "longitude": 108.93,
+        "matchType": "regional",
+        "confidence": 0.8,
+        "notes": "司隶校尉部范围涵盖今陕西中部及河南西部"
+      },
+      "children": [
+        {
+          "name": "京兆尹",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "西汉都城所在，三辅之一",
+          "modernMatch": {
+            "name": "西安市",
+            "province": "陕西省",
+            "latitude": 34.26,
+            "longitude": 108.93,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "长安",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "西汉国都，天下第一城",
+              "yearEstablished": -202,
+              "historicalSignificance": "丝绸之路起点，当时世界最大城市之一",
+              "modernMatch": {
+                "name": "西安市未央区",
+                "province": "陕西省",
+                "latitude": 34.27,
+                "longitude": 108.95,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "左冯翊",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "三辅之一，位于长安以东",
+          "modernMatch": {
+            "name": "大荔县",
+            "province": "陕西省",
+            "latitude": 34.80,
+            "longitude": 109.94,
+            "matchType": "exact",
+            "confidence": 0.85
+          },
+          "children": [
+            {
+              "name": "高陵",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "左冯翊治所，三辅要地",
+              "historicalSignificance": "汉代三辅重县",
+              "modernMatch": {
+                "name": "高陵区",
+                "province": "陕西省",
+                "latitude": 34.53,
+                "longitude": 109.09,
+                "matchType": "exact",
+                "confidence": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "name": "右扶风",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "三辅之一，位于长安以西",
+          "modernMatch": {
+            "name": "凤翔区",
+            "province": "陕西省",
+            "latitude": 34.52,
+            "longitude": 107.40,
+            "matchType": "exact",
+            "confidence": 0.85
+          },
+          "children": [
+            {
+              "name": "槐里",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "右扶风治所，马超故里附近",
+              "historicalSignificance": "汉代右扶风重镇，武帝建章宫所在",
+              "modernMatch": {
+                "name": "兴平市",
+                "province": "陕西省",
+                "latitude": 34.30,
+                "longitude": 108.49,
+                "matchType": "exact",
+                "confidence": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "name": "河南尹",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "东汉都城所在",
+          "yearEstablished": -202,
+          "historicalSignificance": "东汉国都洛阳所在，天下之中",
+          "modernMatch": {
+            "name": "洛阳市",
+            "province": "河南省",
+            "latitude": 34.62,
+            "longitude": 112.45,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "洛阳",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "东汉国都，光武帝定都于此",
+              "yearEstablished": 25,
+              "historicalSignificance": "东汉政治中心，丝绸之路东方起点",
+              "modernMatch": {
+                "name": "洛阳市老城区",
+                "province": "河南省",
+                "latitude": 34.68,
+                "longitude": 112.47,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "河东郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "位于黄河以东，盐铁重地",
+          "modernMatch": {
+            "name": "夏县",
+            "province": "山西省",
+            "latitude": 35.12,
+            "longitude": 111.22,
+            "matchType": "exact",
+            "confidence": 0.85
+          },
+          "children": [
+            {
+              "name": "安邑",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "河东郡治所，古魏国都城",
+              "historicalSignificance": "产盐重地，汉代经济要地",
+              "modernMatch": {
+                "name": "夏县",
+                "province": "山西省",
+                "latitude": 35.12,
+                "longitude": 111.22,
+                "matchType": "exact",
+                "confidence": 0.9
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "豫州",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "位于中原腹地，天下之中",
+      "historicalSignificance": "豫州为古九州之一，汉代人口稠密之区",
+      "modernMatch": {
+        "name": "许昌市",
+        "province": "河南省",
+        "latitude": 34.03,
+        "longitude": 113.85,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "豫州范围涵盖今河南东部及安徽北部"
+      },
+      "children": [
+        {
+          "name": "颍川郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "中原名郡，多出名士",
+          "historicalSignificance": "汉代文化重镇，荀彧、陈寔等名士故里",
+          "modernMatch": {
+            "name": "禹州市",
+            "province": "河南省",
+            "latitude": 34.16,
+            "longitude": 113.47,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": [
+            {
+              "name": "许",
+              "alias": "许昌",
+              "adminLevel": "xian",
+              "description": "颍川郡治所，曹操迎献帝之都",
+              "historicalSignificance": "东汉末年汉献帝迁都于此",
+              "modernMatch": {
+                "name": "许昌市",
+                "province": "河南省",
+                "latitude": 34.03,
+                "longitude": 113.85,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        },
+        {
+          "name": "汝南郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "人口大郡，汉代望族荟萃之地",
+          "historicalSignificance": "袁绍家族四世三公，出于汝南",
+          "modernMatch": {
+            "name": "平舆县",
+            "province": "河南省",
+            "latitude": 32.97,
+            "longitude": 114.62,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": [
+            {
+              "name": "平舆",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "汝南郡治所",
+              "historicalSignificance": "袁氏家族根基所在",
+              "modernMatch": {
+                "name": "平舆县",
+                "province": "河南省",
+                "latitude": 32.97,
+                "longitude": 114.62,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        },
+        {
+          "name": "梁国",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "西汉梁王封地，文化繁盛",
+          "modernMatch": {
+            "name": "商丘市",
+            "province": "河南省",
+            "latitude": 34.41,
+            "longitude": 115.65,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "沛国",
+          "alias": "沛郡",
+          "adminLevel": "jun",
+          "description": "汉高祖刘邦故乡",
+          "historicalSignificance": "刘邦故里，汉代龙兴之地",
+          "modernMatch": {
+            "name": "沛县",
+            "province": "江苏省",
+            "latitude": 34.73,
+            "longitude": 116.94,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "沛",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "汉高祖刘邦发迹之地",
+              "historicalSignificance": "刘邦曾任泗水亭长，此处为汉朝龙兴之地",
+              "modernMatch": {
+                "name": "沛县",
+                "province": "江苏省",
+                "latitude": 34.73,
+                "longitude": 116.94,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        },
+        {
+          "name": "陈国",
+          "alias": "陈郡",
+          "adminLevel": "jun",
+          "description": "古陈国故地，伏羲神农遗迹所在",
+          "modernMatch": {
+            "name": "淮阳县",
+            "province": "河南省",
+            "latitude": 33.73,
+            "longitude": 114.89,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "兖州",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "古九州之一，位于中原东部",
+      "historicalSignificance": "曹操起家之地，汉代军事要地",
+      "modernMatch": {
+        "name": "济宁市",
+        "province": "山东省",
+        "latitude": 35.41,
+        "longitude": 116.59,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "兖州范围涵盖今山东西南部及河南东部"
+      },
+      "children": [
+        {
+          "name": "陈留郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "东汉末年曹操起兵之地",
+          "historicalSignificance": "曹操在陈留散尽家财起兵讨董卓",
+          "modernMatch": {
+            "name": "开封市祥符区",
+            "province": "河南省",
+            "latitude": 34.76,
+            "longitude": 114.44,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": [
+            {
+              "name": "陈留",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "陈留郡治所，曹操起兵之地",
+              "historicalSignificance": "曹操在此起兵讨伐董卓",
+              "modernMatch": {
+                "name": "开封市祥符区",
+                "province": "河南省",
+                "latitude": 34.76,
+                "longitude": 114.44,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        },
+        {
+          "name": "东郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "黄河要冲，军事重镇",
+          "modernMatch": {
+            "name": "濮阳市",
+            "province": "河南省",
+            "latitude": 35.76,
+            "longitude": 115.03,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "泰山郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "五岳之首泰山所在",
+          "historicalSignificance": "帝王封禅之地，汉代文化名山",
+          "modernMatch": {
+            "name": "泰安市",
+            "province": "山东省",
+            "latitude": 36.20,
+            "longitude": 117.09,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "济阴郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "济水之南，经济发达",
+          "modernMatch": {
+            "name": "定陶区",
+            "province": "山东省",
+            "latitude": 35.24,
+            "longitude": 115.57,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "山阳郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "兖州要郡，东汉末年战乱频发",
+          "modernMatch": {
+            "name": "金乡县",
+            "province": "山东省",
+            "latitude": 35.07,
+            "longitude": 116.31,
+            "matchType": "exact",
+            "confidence": 0.85
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "徐州",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "古九州之一，位于东方沿海",
+      "historicalSignificance": "兵家必争之地，东汉末年陶谦、刘备、吕布、曹操反复争夺",
+      "modernMatch": {
+        "name": "徐州市",
+        "province": "江苏省",
+        "latitude": 34.26,
+        "longitude": 117.18,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "徐州范围涵盖今山东东南部及江苏北部"
+      },
+      "children": [
+        {
+          "name": "东海郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "东临大海，物产丰富",
+          "modernMatch": {
+            "name": "郯城县",
+            "province": "山东省",
+            "latitude": 34.62,
+            "longitude": 118.36,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "琅邪郡",
+          "alias": "琅琊郡",
+          "adminLevel": "jun",
+          "description": "诸葛亮故里，文化名城",
+          "historicalSignificance": "诸葛氏家族故里，琅邪王氏发源地",
+          "modernMatch": {
+            "name": "临沂市",
+            "province": "山东省",
+            "latitude": 35.10,
+            "longitude": 118.36,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": [
+            {
+              "name": "琅邪",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "琅邪郡治所，诸葛亮故里",
+              "historicalSignificance": "诸葛亮少年时居于此",
+              "modernMatch": {
+                "name": "临沂市",
+                "province": "山东省",
+                "latitude": 35.10,
+                "longitude": 118.36,
+                "matchType": "exact",
+                "confidence": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "name": "彭城国",
+          "alias": "彭城郡",
+          "adminLevel": "jun",
+          "description": "西楚霸王项羽故都",
+          "historicalSignificance": "项羽建都于此，楚汉相争核心区域",
+          "modernMatch": {
+            "name": "徐州市",
+            "province": "江苏省",
+            "latitude": 34.26,
+            "longitude": 117.18,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "彭城",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "项羽建都之地，四战之地",
+              "historicalSignificance": "楚汉相争主战场，项羽都城",
+              "modernMatch": {
+                "name": "徐州市",
+                "province": "江苏省",
+                "latitude": 34.26,
+                "longitude": 117.18,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "下邳国",
+          "alias": "下邳郡",
+          "adminLevel": "jun",
+          "description": "徐州要地，三国时吕布殒命之处",
+          "modernMatch": {
+            "name": "邳州市",
+            "province": "江苏省",
+            "latitude": 34.32,
+            "longitude": 117.96,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "广陵郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "江淮之间，南北要冲",
+          "modernMatch": {
+            "name": "扬州市",
+            "province": "江苏省",
+            "latitude": 32.39,
+            "longitude": 119.42,
+            "matchType": "exact",
+            "confidence": 0.85
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "青州",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "古九州之一，东方沿海富庶之地",
+      "historicalSignificance": "春秋齐国故地，盐铁发达",
+      "modernMatch": {
+        "name": "淄博市",
+        "province": "山东省",
+        "latitude": 36.81,
+        "longitude": 118.31,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "青州范围涵盖今山东北部及东部"
+      },
+      "children": [
+        {
+          "name": "齐郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "春秋齐国故地，经济发达",
+          "historicalSignificance": "汉代丝织业中心，盐铁之利甲天下",
+          "modernMatch": {
+            "name": "淄博市临淄区",
+            "province": "山东省",
+            "latitude": 36.83,
+            "longitude": 118.31,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "临淄",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "齐国故都，汉代五都之一",
+              "historicalSignificance": "春秋战国齐国都城，汉代丝织业重镇",
+              "modernMatch": {
+                "name": "淄博市临淄区",
+                "province": "山东省",
+                "latitude": 36.83,
+                "longitude": 118.31,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "济南郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "济水之南，历史名城",
+          "modernMatch": {
+            "name": "济南市",
+            "province": "山东省",
+            "latitude": 36.65,
+            "longitude": 117.00,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "平原郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "刘备曾任平原相",
+          "historicalSignificance": "刘备早期任职之地",
+          "modernMatch": {
+            "name": "平原县",
+            "province": "山东省",
+            "latitude": 37.17,
+            "longitude": 116.44,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "北海郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "孔融曾任北海相",
+          "historicalSignificance": "建安七子之一孔融治理之地",
+          "modernMatch": {
+            "name": "潍坊市",
+            "province": "山东省",
+            "latitude": 36.71,
+            "longitude": 119.16,
+            "matchType": "exact",
+            "confidence": 0.85
+          },
+          "children": []
+        },
+        {
+          "name": "东莱郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "山东半岛东端，濒临大海",
+          "modernMatch": {
+            "name": "莱州市",
+            "province": "山东省",
+            "latitude": 37.18,
+            "longitude": 119.94,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "凉州",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "西北边陲，丝绸之路要道",
+      "historicalSignificance": "河西走廊所在，连接中原与西域的通道",
+      "modernMatch": {
+        "name": "武威市",
+        "province": "甘肃省",
+        "latitude": 37.93,
+        "longitude": 102.64,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "凉州范围涵盖今甘肃、宁夏及青海东部"
+      },
+      "children": [
+        {
+          "name": "陇西郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "陇山以西，秦人故地",
+          "historicalSignificance": "秦人发祥之地，李广故里",
+          "modernMatch": {
+            "name": "临洮县",
+            "province": "甘肃省",
+            "latitude": 35.37,
+            "longitude": 103.86,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": [
+            {
+              "name": "狄道",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "陇西郡治所，秦长城西端起点",
+              "historicalSignificance": "秦长城西端起点，汉代西北军事重镇",
+              "modernMatch": {
+                "name": "临洮县",
+                "province": "甘肃省",
+                "latitude": 35.37,
+                "longitude": 103.86,
+                "matchType": "exact",
+                "confidence": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "name": "天水郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "陇右要地，姜维故里",
+          "historicalSignificance": "三国姜维故里，诸葛亮北伐要地",
+          "modernMatch": {
+            "name": "天水市",
+            "province": "甘肃省",
+            "latitude": 34.58,
+            "longitude": 105.72,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": [
+            {
+              "name": "冀",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "天水郡治所，姜维故乡",
+              "historicalSignificance": "三国姜维出生之地",
+              "modernMatch": {
+                "name": "甘谷县",
+                "province": "甘肃省",
+                "latitude": 34.73,
+                "longitude": 105.34,
+                "matchType": "exact",
+                "confidence": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "name": "武威郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "河西走廊东端要冲",
+          "historicalSignificance": "霍去病击匈奴后设郡，丝路重镇",
+          "yearEstablished": -121,
+          "modernMatch": {
+            "name": "武威市",
+            "province": "甘肃省",
+            "latitude": 37.93,
+            "longitude": 102.64,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "姑臧",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "武威郡治所，凉州刺史驻地",
+              "historicalSignificance": "河西走廊最大城市，丝路商贸中心",
+              "modernMatch": {
+                "name": "武威市凉州区",
+                "province": "甘肃省",
+                "latitude": 37.93,
+                "longitude": 102.64,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        },
+        {
+          "name": "张掖郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "河西走廊中部，断匈奴右臂",
+          "yearEstablished": -111,
+          "historicalSignificance": "霍去病征服河西后设郡",
+          "modernMatch": {
+            "name": "张掖市",
+            "province": "甘肃省",
+            "latitude": 38.93,
+            "longitude": 100.45,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        },
+        {
+          "name": "酒泉郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "河西走廊西端",
+          "yearEstablished": -121,
+          "historicalSignificance": "传说霍去病倾酒入泉而得名",
+          "modernMatch": {
+            "name": "酒泉市",
+            "province": "甘肃省",
+            "latitude": 39.74,
+            "longitude": 98.49,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        },
+        {
+          "name": "敦煌郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "丝路西端重镇，通往西域门户",
+          "yearEstablished": -111,
+          "historicalSignificance": "丝绸之路重要节点，莫高窟所在",
+          "modernMatch": {
+            "name": "敦煌市",
+            "province": "甘肃省",
+            "latitude": 40.14,
+            "longitude": 94.66,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "敦煌",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "丝路咽喉，西域门户",
+              "historicalSignificance": "汉代通往西域的门户，张骞出使西域经此",
+              "modernMatch": {
+                "name": "敦煌市",
+                "province": "甘肃省",
+                "latitude": 40.14,
+                "longitude": 94.66,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "并州",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "北方边防重地，抗击匈奴前线",
+      "historicalSignificance": "汉代抵御匈奴南侵的军事前沿",
+      "modernMatch": {
+        "name": "太原市",
+        "province": "山西省",
+        "latitude": 37.87,
+        "longitude": 112.55,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "并州范围涵盖今山西省大部及内蒙古南部"
+      },
+      "children": [
+        {
+          "name": "太原郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "并州核心，北方重镇",
+          "historicalSignificance": "汉代北方军事经济中心",
+          "modernMatch": {
+            "name": "太原市",
+            "province": "山西省",
+            "latitude": 37.87,
+            "longitude": 112.55,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "晋阳",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "太原郡治所，并州刺史驻地",
+              "historicalSignificance": "并州政治中心，汉代北方重镇",
+              "modernMatch": {
+                "name": "太原市晋源区",
+                "province": "山西省",
+                "latitude": 37.72,
+                "longitude": 112.48,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        },
+        {
+          "name": "雁门郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "北防匈奴要塞，雁门关所在",
+          "historicalSignificance": "李广、卫青等名将曾在此抗击匈奴",
+          "modernMatch": {
+            "name": "代县",
+            "province": "山西省",
+            "latitude": 39.07,
+            "longitude": 112.96,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "代郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "北方边郡，汉匈交战前线",
+          "modernMatch": {
+            "name": "蔚县",
+            "province": "河北省",
+            "latitude": 39.84,
+            "longitude": 114.51,
+            "matchType": "exact",
+            "confidence": 0.85
+          },
+          "children": []
+        },
+        {
+          "name": "上党郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "高居太行之上，地势险要",
+          "historicalSignificance": "长平之战发生地附近，战略要地",
+          "modernMatch": {
+            "name": "长治市",
+            "province": "山西省",
+            "latitude": 36.19,
+            "longitude": 113.12,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "云中郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "河套地区，卫青出击匈奴始发地",
+          "historicalSignificance": "卫青率军自云中出击匈奴，收复河套",
+          "modernMatch": {
+            "name": "托克托县",
+            "province": "内蒙古自治区",
+            "latitude": 40.28,
+            "longitude": 111.16,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "冀州",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "古九州之一，北方人口稠密之区",
+      "historicalSignificance": "袁绍、曹操争霸之地，汉代经济发达区域",
+      "modernMatch": {
+        "name": "邢台市",
+        "province": "河北省",
+        "latitude": 37.07,
+        "longitude": 114.50,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "冀州范围涵盖今河北中南部"
+      },
+      "children": [
+        {
+          "name": "魏郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "冀州核心，曹操封地所在",
+          "historicalSignificance": "曹操被封为魏公、魏王，封地在此",
+          "modernMatch": {
+            "name": "临漳县",
+            "province": "河北省",
+            "latitude": 36.17,
+            "longitude": 114.61,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": [
+            {
+              "name": "邺",
+              "alias": "邺城",
+              "adminLevel": "xian",
+              "description": "魏郡治所，曹操封魏王后之都",
+              "historicalSignificance": "曹操实际政治中心，铜雀台所在",
+              "modernMatch": {
+                "name": "临漳县",
+                "province": "河北省",
+                "latitude": 36.17,
+                "longitude": 114.61,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        },
+        {
+          "name": "钜鹿郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "黄巾起义发源地",
+          "historicalSignificance": "张角创立太平道，黄巾起义爆发之地",
+          "modernMatch": {
+            "name": "宁晋县",
+            "province": "河北省",
+            "latitude": 37.62,
+            "longitude": 114.92,
+            "matchType": "exact",
+            "confidence": 0.85
+          },
+          "children": [
+            {
+              "name": "钜鹿",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "钜鹿郡治所，黄巾起义爆发地",
+              "historicalSignificance": "张角钜鹿起事，黄巾之乱始于此",
+              "modernMatch": {
+                "name": "宁晋县",
+                "province": "河北省",
+                "latitude": 37.62,
+                "longitude": 114.92,
+                "matchType": "exact",
+                "confidence": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "name": "常山郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "赵子龙故里",
+          "historicalSignificance": "三国名将赵云故里",
+          "modernMatch": {
+            "name": "元氏县",
+            "province": "河北省",
+            "latitude": 37.75,
+            "longitude": 114.53,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": [
+            {
+              "name": "真定",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "常山郡治所，赵云故乡",
+              "historicalSignificance": "赵云自称常山赵子龙",
+              "modernMatch": {
+                "name": "正定县",
+                "province": "河北省",
+                "latitude": 38.15,
+                "longitude": 114.57,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        },
+        {
+          "name": "中山国",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "刘备自称中山靖王之后",
+          "historicalSignificance": "中山靖王刘胜封国，刘备自称其后裔",
+          "modernMatch": {
+            "name": "定州市",
+            "province": "河北省",
+            "latitude": 38.52,
+            "longitude": 114.99,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "安平国",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "冀州中部要地",
+          "modernMatch": {
+            "name": "冀州区",
+            "province": "河北省",
+            "latitude": 37.60,
+            "longitude": 115.58,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "渤海郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "濒临渤海，东方盐业重地",
+          "modernMatch": {
+            "name": "沧州市",
+            "province": "河北省",
+            "latitude": 38.30,
+            "longitude": 116.84,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "幽州",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "北方边陲，东北要冲",
+      "historicalSignificance": "公孙瓒、刘虞割据之地，抵御北方游牧民族前沿",
+      "modernMatch": {
+        "name": "北京市",
+        "province": "北京市",
+        "latitude": 39.90,
+        "longitude": 116.40,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "幽州范围涵盖今北京、天津、河北北部及辽宁"
+      },
+      "children": [
+        {
+          "name": "涿郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "刘备故乡",
+          "historicalSignificance": "蜀汉昭烈帝刘备故里",
+          "modernMatch": {
+            "name": "涿州市",
+            "province": "河北省",
+            "latitude": 39.49,
+            "longitude": 115.98,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "涿",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "刘备、张飞故乡",
+              "historicalSignificance": "桃园三结义故事发生地",
+              "modernMatch": {
+                "name": "涿州市",
+                "province": "河北省",
+                "latitude": 39.49,
+                "longitude": 115.98,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "广阳郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "幽州核心，今北京所在",
+          "modernMatch": {
+            "name": "北京市",
+            "province": "北京市",
+            "latitude": 39.90,
+            "longitude": 116.40,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": [
+            {
+              "name": "蓟",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "广阳郡治所，幽州刺史驻地",
+              "historicalSignificance": "燕国故都，汉代幽州政治中心",
+              "modernMatch": {
+                "name": "北京市西城区",
+                "province": "北京市",
+                "latitude": 39.91,
+                "longitude": 116.37,
+                "matchType": "exact",
+                "confidence": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "name": "上谷郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "北方边防要塞",
+          "modernMatch": {
+            "name": "怀来县",
+            "province": "河北省",
+            "latitude": 40.41,
+            "longitude": 115.52,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "渔阳郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "燕山以南，边防重地",
+          "historicalSignificance": "彭宠据渔阳反光武帝",
+          "modernMatch": {
+            "name": "密云区",
+            "province": "北京市",
+            "latitude": 40.38,
+            "longitude": 116.84,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "辽西郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "辽河以西，通往东北要道",
+          "modernMatch": {
+            "name": "锦州市",
+            "province": "辽宁省",
+            "latitude": 41.11,
+            "longitude": 121.13,
+            "matchType": "exact",
+            "confidence": 0.85
+          },
+          "children": []
+        },
+        {
+          "name": "辽东郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "辽东半岛，公孙氏割据之地",
+          "historicalSignificance": "公孙度家族割据辽东数十年",
+          "modernMatch": {
+            "name": "辽阳市",
+            "province": "辽宁省",
+            "latitude": 41.27,
+            "longitude": 123.17,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": [
+            {
+              "name": "辽东",
+              "alias": "襄平",
+              "adminLevel": "xian",
+              "description": "辽东郡治所，公孙氏割据中心",
+              "historicalSignificance": "公孙度、公孙康割据辽东的中心",
+              "modernMatch": {
+                "name": "辽阳市",
+                "province": "辽宁省",
+                "latitude": 41.27,
+                "longitude": 123.17,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "益州",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "西南大州，天府之国",
+      "historicalSignificance": "刘备建立蜀汉之地，诸葛亮鞠躬尽瘁之所",
+      "modernMatch": {
+        "name": "成都市",
+        "province": "四川省",
+        "latitude": 30.57,
+        "longitude": 104.07,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "益州范围涵盖今四川、重庆、云南、贵州及陕西南部"
+      },
+      "children": [
+        {
+          "name": "汉中郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "入蜀门户，刘邦发迹之地",
+          "historicalSignificance": "刘邦为汉王时都南郑，后以此为基地夺取天下",
+          "modernMatch": {
+            "name": "汉中市",
+            "province": "陕西省",
+            "latitude": 33.07,
+            "longitude": 107.03,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "南郑",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "汉中郡治所，刘邦为汉王之都",
+              "historicalSignificance": "刘邦受封汉王后之都城，汉朝国号源于此",
+              "modernMatch": {
+                "name": "汉中市汉台区",
+                "province": "陕西省",
+                "latitude": 33.07,
+                "longitude": 107.03,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        },
+        {
+          "name": "巴郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "巴蜀之地，山川险阻",
+          "historicalSignificance": "巴人故地，入蜀要道",
+          "modernMatch": {
+            "name": "重庆市",
+            "province": "重庆市",
+            "latitude": 29.56,
+            "longitude": 106.55,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": [
+            {
+              "name": "江州",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "巴郡治所，今重庆主城",
+              "historicalSignificance": "巴国故都，汉代西南军事重镇",
+              "modernMatch": {
+                "name": "重庆市渝中区",
+                "province": "重庆市",
+                "latitude": 29.56,
+                "longitude": 106.55,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        },
+        {
+          "name": "蜀郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "天府之国核心，成都所在",
+          "historicalSignificance": "都江堰灌溉千里，蜀锦名扬天下",
+          "modernMatch": {
+            "name": "成都市",
+            "province": "四川省",
+            "latitude": 30.57,
+            "longitude": 104.07,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "成都",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "蜀郡治所，锦官城",
+              "historicalSignificance": "蜀锦产地，刘备定都之地，蜀汉国都",
+              "modernMatch": {
+                "name": "成都市",
+                "province": "四川省",
+                "latitude": 30.57,
+                "longitude": 104.07,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "犍为郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "四川南部要郡",
+          "modernMatch": {
+            "name": "彭山区",
+            "province": "四川省",
+            "latitude": 30.22,
+            "longitude": 103.86,
+            "matchType": "exact",
+            "confidence": 0.85
+          },
+          "children": []
+        },
+        {
+          "name": "牂牁郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "西南边陲，今贵州地区",
+          "yearEstablished": -111,
+          "historicalSignificance": "汉武帝开西南夷后设郡",
+          "modernMatch": {
+            "name": "黄平县",
+            "province": "贵州省",
+            "latitude": 26.90,
+            "longitude": 107.90,
+            "matchType": "exact",
+            "confidence": 0.8
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "荆州",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "南方大州，四战之地",
+      "historicalSignificance": "三国争夺焦点，赤壁之战、夷陵之战皆在此",
+      "modernMatch": {
+        "name": "荆州市",
+        "province": "湖北省",
+        "latitude": 30.33,
+        "longitude": 112.24,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "荆州范围涵盖今湖北、湖南大部"
+      },
+      "children": [
+        {
+          "name": "南阳郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "东汉第一大郡，光武帝故乡",
+          "historicalSignificance": "光武帝刘秀故乡，东汉南都",
+          "modernMatch": {
+            "name": "南阳市",
+            "province": "河南省",
+            "latitude": 33.00,
+            "longitude": 112.53,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "宛",
+              "alias": "宛城",
+              "adminLevel": "xian",
+              "description": "南阳郡治所，东汉陪都",
+              "historicalSignificance": "东汉光武帝龙兴之地，商业繁华",
+              "modernMatch": {
+                "name": "南阳市",
+                "province": "河南省",
+                "latitude": 33.00,
+                "longitude": 112.53,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "南郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "荆州核心，长江中游要地",
+          "historicalSignificance": "关羽大意失荆州即此",
+          "modernMatch": {
+            "name": "荆州市",
+            "province": "湖北省",
+            "latitude": 30.33,
+            "longitude": 112.24,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "江陵",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "南郡治所，楚故都",
+              "historicalSignificance": "楚国故都纪南城附近，关羽镇守荆州之中心",
+              "modernMatch": {
+                "name": "荆州市荆州区",
+                "province": "湖北省",
+                "latitude": 30.35,
+                "longitude": 112.19,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "江夏郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "长江中游，军事要地",
+          "historicalSignificance": "黄祖镇守江夏，孙权屡攻不下",
+          "modernMatch": {
+            "name": "武汉市新洲区",
+            "province": "湖北省",
+            "latitude": 30.84,
+            "longitude": 114.80,
+            "matchType": "exact",
+            "confidence": 0.85
+          },
+          "children": []
+        },
+        {
+          "name": "零陵郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "荆南四郡之一",
+          "historicalSignificance": "刘备取荆南四郡之一",
+          "modernMatch": {
+            "name": "永州市",
+            "province": "湖南省",
+            "latitude": 26.42,
+            "longitude": 111.61,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "桂阳郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "荆南四郡之一，赵云曾领桂阳太守",
+          "historicalSignificance": "赵云代赵范领桂阳太守",
+          "modernMatch": {
+            "name": "郴州市",
+            "province": "湖南省",
+            "latitude": 25.77,
+            "longitude": 113.01,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "长沙郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "荆南四郡之一，南方重镇",
+          "historicalSignificance": "孙坚曾任长沙太守，讨伐黄巾",
+          "modernMatch": {
+            "name": "长沙市",
+            "province": "湖南省",
+            "latitude": 28.23,
+            "longitude": 112.94,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "长沙",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "长沙郡治所，南方名城",
+              "historicalSignificance": "孙坚起家之地，马王堆汉墓所在",
+              "modernMatch": {
+                "name": "长沙市",
+                "province": "湖南省",
+                "latitude": 28.23,
+                "longitude": 112.94,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "武陵郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "荆南四郡之一，陶渊明桃花源记所在",
+          "modernMatch": {
+            "name": "常德市",
+            "province": "湖南省",
+            "latitude": 29.03,
+            "longitude": 111.68,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "扬州",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "东南大州，江东孙氏基业所在",
+      "historicalSignificance": "孙吴立国之基，六朝古都金陵所在",
+      "modernMatch": {
+        "name": "南京市",
+        "province": "江苏省",
+        "latitude": 32.06,
+        "longitude": 118.80,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "扬州范围涵盖今安徽、江苏南部、浙江、福建及江西"
+      },
+      "children": [
+        {
+          "name": "庐江郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "江淮之间，周瑜故乡",
+          "historicalSignificance": "周瑜故里，孙吴名将辈出之地",
+          "modernMatch": {
+            "name": "庐江县",
+            "province": "安徽省",
+            "latitude": 31.26,
+            "longitude": 117.29,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "九江郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "长江以北，寿春所在",
+          "historicalSignificance": "袁术称帝于寿春",
+          "modernMatch": {
+            "name": "寿县",
+            "province": "安徽省",
+            "latitude": 32.57,
+            "longitude": 116.79,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": [
+            {
+              "name": "寿春",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "九江郡治所，袁术称帝之地",
+              "historicalSignificance": "袁术在此僭越称帝，后兵败身亡",
+              "modernMatch": {
+                "name": "寿县",
+                "province": "安徽省",
+                "latitude": 32.57,
+                "longitude": 116.79,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        },
+        {
+          "name": "会稽郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "东南大郡，越王勾践故地",
+          "historicalSignificance": "春秋越国故地，孙策渡江取会稽",
+          "modernMatch": {
+            "name": "绍兴市",
+            "province": "浙江省",
+            "latitude": 30.00,
+            "longitude": 120.58,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "会稽",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "会稽郡治所，越王勾践卧薪尝胆之地",
+              "historicalSignificance": "春秋越国故都，王羲之兰亭集会之地",
+              "modernMatch": {
+                "name": "绍兴市",
+                "province": "浙江省",
+                "latitude": 30.00,
+                "longitude": 120.58,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "丹阳郡",
+          "alias": "丹杨郡",
+          "adminLevel": "jun",
+          "description": "孙吴发祥之地，精兵产地",
+          "historicalSignificance": "丹阳兵天下精锐，孙吴立国根基",
+          "modernMatch": {
+            "name": "宣城市",
+            "province": "安徽省",
+            "latitude": 30.95,
+            "longitude": 118.76,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "豫章郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "江南西部，今江西地区",
+          "modernMatch": {
+            "name": "南昌市",
+            "province": "江西省",
+            "latitude": 28.68,
+            "longitude": 115.86,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": [
+            {
+              "name": "南昌",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "豫章郡治所，灌婴筑城",
+              "historicalSignificance": "灌婴筑南昌城，汉代江南重镇",
+              "modernMatch": {
+                "name": "南昌市",
+                "province": "江西省",
+                "latitude": 28.68,
+                "longitude": 115.86,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        },
+        {
+          "name": "吴郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "江东核心，孙吴龙兴之地",
+          "historicalSignificance": "孙坚家族籍贯所在，江东基业起点",
+          "modernMatch": {
+            "name": "苏州市",
+            "province": "江苏省",
+            "latitude": 31.30,
+            "longitude": 120.62,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "吴",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "吴郡治所，春秋吴国故都",
+              "historicalSignificance": "春秋吴国故地，孙吴基业起点",
+              "modernMatch": {
+                "name": "苏州市",
+                "province": "江苏省",
+                "latitude": 31.30,
+                "longitude": 120.62,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "交州",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "岭南之地，南方边陲",
+      "historicalSignificance": "赵佗南越国故地，汉武帝平南越后设州",
+      "modernMatch": {
+        "name": "广州市",
+        "province": "广东省",
+        "latitude": 23.13,
+        "longitude": 113.26,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "交州范围涵盖今广东、广西及越南北部"
+      },
+      "children": [
+        {
+          "name": "南海郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "岭南核心，今广州所在",
+          "historicalSignificance": "赵佗建南越国都城番禺所在",
+          "modernMatch": {
+            "name": "广州市",
+            "province": "广东省",
+            "latitude": 23.13,
+            "longitude": 113.26,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "番禺",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "南海郡治所，南越国都",
+              "historicalSignificance": "赵佗建南越国之都城，汉代南海贸易中心",
+              "modernMatch": {
+                "name": "广州市番禺区",
+                "province": "广东省",
+                "latitude": 22.94,
+                "longitude": 113.38,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "郁林郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "今广西中部地区",
+          "modernMatch": {
+            "name": "贵港市",
+            "province": "广西壮族自治区",
+            "latitude": 23.11,
+            "longitude": 109.60,
+            "matchType": "exact",
+            "confidence": 0.85
+          },
+          "children": []
+        },
+        {
+          "name": "苍梧郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "今广西东部地区",
+          "historicalSignificance": "赵佗南越国重镇",
+          "modernMatch": {
+            "name": "梧州市",
+            "province": "广西壮族自治区",
+            "latitude": 23.48,
+            "longitude": 111.28,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "交趾郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "今越南北部地区",
+          "historicalSignificance": "汉代最南端行政区，士燮治理之地",
+          "modernMatch": {
+            "name": "河内市",
+            "province": "越南",
+            "latitude": 21.03,
+            "longitude": 105.85,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "九真郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "今越南清化一带",
+          "modernMatch": {
+            "name": "清化市",
+            "province": "越南",
+            "latitude": 19.81,
+            "longitude": 105.79,
+            "matchType": "exact",
+            "confidence": 0.85
+          },
+          "children": []
+        },
+        {
+          "name": "日南郡",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "汉代最南端郡治",
+          "historicalSignificance": "汉代版图最南端的行政区划",
+          "modernMatch": {
+            "name": "广平省",
+            "province": "越南",
+            "latitude": 17.48,
+            "longitude": 106.60,
+            "matchType": "exact",
+            "confidence": 0.8
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}
