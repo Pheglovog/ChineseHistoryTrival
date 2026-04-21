@@ -41,7 +41,7 @@ class AdminLevelChips extends ConsumerWidget {
                 side: BorderSide(
                   color: isSelected
                       ? AppColors.primary
-                      : AppColors.gold.withOpacity(0.3),
+                      : AppColors.gold.withValues(alpha: 0.3),
                 ),
               ),
             );

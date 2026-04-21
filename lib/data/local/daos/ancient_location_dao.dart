@@ -1,80 +1,94 @@
-import 'package:drift/drift.dart';
-import '../tables/ancient_locations_table.dart';
-import '../tables/dynasties_table.dart';
-import '../database/app_database.dart';
+import 'package:sqflite/sqflite.dart';
 
-part 'ancient_location_dao.g.dart';
+import '../../../domain/entities/ancient_location.dart';
+import '../database/schema.dart';
 
-/// 古代地名数据访问对象
-@DriftAccessor(tables: [AncientLocations])
-class AncientLocationDao extends DatabaseAccessor<AppDatabase> {
-  AncientLocationDao(AppDatabase db) : super(db);
+class AncientLocationDao {
+  final Database _db;
 
-  // ---------------------------------------------------------------------------
-  // The generated mixin will be added after running build_runner:
-  //   with _$AncientLocationDaoMixin
-  // ---------------------------------------------------------------------------
+  AncientLocationDao(this._db);
 
-  /// 监听指定朝代下的所有古代地名（响应式）
-  Stream<List<AncientLocation>> watchByDynasty(int dynastyId) {
-    return (select(ancientLocations)..where((t) => t.dynastyId.equals(dynastyId)))
-        .watch();
+  Stream<List<AncientLocation>> watchByDynasty(int dynastyId) async* {
+    yield await getByDynasty(dynastyId);
   }
 
-  /// 监听指定朝代 + 行政级别的古代地名（响应式）
   Stream<List<AncientLocation>> watchByDynastyAndLevel(
     int dynastyId,
     String adminLevel,
-  ) {
-    return (select(ancientLocations)
-          ..where((t) =>
-              t.dynastyId.equals(dynastyId) & t.adminLevel.equals(adminLevel)))
-        .watch();
+  ) async* {
+    yield await getByDynastyAndLevel(dynastyId, adminLevel);
   }
 
-  /// 监听指定上级地点的子地点（响应式）
-  Stream<List<AncientLocation>> watchChildren(int parentLocationId) {
-    return (select(ancientLocations)
-          ..where((t) => t.parentLocationId.equals(parentLocationId)))
-        .watch();
+  Stream<List<AncientLocation>> watchChildren(int parentLocationId) async* {
+    yield await getChildren(parentLocationId);
   }
 
-  /// 获取指定朝代 + 行政级别的古代地名（一次性）
+  Future<List<AncientLocation>> getByDynasty(int dynastyId) async {
+    final rows = await _db.query(
+      Schema.ancientLocations,
+      where: 'dynasty_id = ?',
+      whereArgs: [dynastyId],
+    );
+    return rows.map(AncientLocation.fromRow).toList();
+  }
+
   Future<List<AncientLocation>> getByDynastyAndLevel(
     int dynastyId,
     String adminLevel,
-  ) {
-    return (select(ancientLocations)
-          ..where((t) =>
-              t.dynastyId.equals(dynastyId) & t.adminLevel.equals(adminLevel)))
-        .get();
+  ) async {
+    final rows = await _db.query(
+      Schema.ancientLocations,
+      where: 'dynasty_id = ? AND admin_level = ?',
+      whereArgs: [dynastyId, adminLevel],
+    );
+    return rows.map(AncientLocation.fromRow).toList();
   }
 
-  /// 根据 ID 获取单个古代地名
-  Future<AncientLocation> getById(int id) {
-    return (select(ancientLocations)..where((t) => t.id.equals(id)))
-        .getSingle();
+  Future<List<AncientLocation>> getChildren(int parentLocationId) async {
+    final rows = await _db.query(
+      Schema.ancientLocations,
+      where: 'parent_location_id = ?',
+      whereArgs: [parentLocationId],
+    );
+    return rows.map(AncientLocation.fromRow).toList();
   }
 
-  /// 插入单条古代地名记录，返回新记录的 id
-  Future<int> insert(AncientLocationsCompanion entry) {
-    return into(ancientLocations).insert(entry);
+  Future<AncientLocation> getById(int id) async {
+    final rows = await _db.query(
+      Schema.ancientLocations,
+      where: 'id = ?',
+      whereArgs: [id],
+    );
+    if (rows.isEmpty) throw StateError('AncientLocation $id not found');
+    return AncientLocation.fromRow(rows.first);
   }
 
-  /// 批量插入古代地名记录
-  Future<void> insertAll(List<AncientLocationsCompanion> entries) {
-    return batch((b) {
-      b.insertAll(ancientLocations, entries);
-    });
+  Future<int> insert(Map<String, dynamic> location) async {
+    return _db.insert(Schema.ancientLocations, location);
   }
 
-  /// 统计指定朝代下的古代地名数量
+  Future<void> insertAll(List<Map<String, dynamic>> entries) async {
+    final batch = _db.batch();
+    for (final entry in entries) {
+      batch.insert(Schema.ancientLocations, entry);
+    }
+    await batch.commit(noResult: true);
+  }
+
   Future<int> countByDynasty(int dynastyId) async {
-    final countExpr = ancientLocations.id.count();
-    final query = selectOnly(ancientLocations)
-      ..addColumns([countExpr])
-      ..where(ancientLocations.dynastyId.equals(dynastyId));
-    final row = await query.getSingle();
-    return row.read(countExpr) ?? 0;
+    final result = await _db.rawQuery(
+      'SELECT COUNT(*) as count FROM ${Schema.ancientLocations} WHERE dynasty_id = ?',
+      [dynastyId],
+    );
+    return Sqflite.firstIntValue(result) ?? 0;
+  }
+
+  Future<List<AncientLocation>> searchByName(String query, {int dynastyId = 1}) async {
+    final rows = await _db.query(
+      Schema.ancientLocations,
+      where: 'dynasty_id = ? AND name LIKE ?',
+      whereArgs: [dynastyId, '%$query%'],
+    );
+    return rows.map(AncientLocation.fromRow).toList();
   }
 }

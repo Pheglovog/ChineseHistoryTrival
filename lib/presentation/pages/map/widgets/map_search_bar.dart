@@ -84,7 +84,7 @@ class _MapSearchBarState extends ConsumerState<MapSearchBar> {
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
+                  color: Colors.black.withValues(alpha: 0.1),
                   blurRadius: 8,
                   offset: const Offset(0, 2),
                 ),
@@ -96,7 +96,7 @@ class _MapSearchBarState extends ConsumerState<MapSearchBar> {
                 return ListTile(
                   dense: true,
                   title: Text(
-                    item.name ?? '',
+                    item.name,
                     style: const TextStyle(
                       fontFamily: AppTypography.fontFamily,
                       fontSize: 13,
@@ -122,7 +122,8 @@ class _MapSearchBarState extends ConsumerState<MapSearchBar> {
     }
 
     final db = ref.read(databaseProvider);
-    final results = await db.ancientLocationDao.searchByName(query);
+    final dao = await db.ancientLocationDao;
+    final results = await dao.searchByName(query);
     setState(() {
       _suggestions = results;
       _showSuggestions = true;
@@ -141,7 +142,7 @@ class _MapSearchBarState extends ConsumerState<MapSearchBar> {
   }
 
   void _selectSuggestion(dynamic location) {
-    _controller.text = location.name ?? '';
+    _controller.text = location.name;
     _focusNode.unfocus();
     setState(() {
       _showSuggestions = false;

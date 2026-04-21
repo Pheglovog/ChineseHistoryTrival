@@ -1,57 +1,55 @@
-import 'package:drift/drift.dart';
-import '../tables/modern_locations_table.dart';
-import '../database/app_database.dart';
+import 'package:sqflite/sqflite.dart';
 
-part 'modern_location_dao.g.dart';
+import '../../../domain/entities/modern_location.dart';
+import '../database/schema.dart';
 
-/// 现代地名数据访问对象
-@DriftAccessor(tables: [ModernLocations])
-class ModernLocationDao extends DatabaseAccessor<AppDatabase> {
-  ModernLocationDao(AppDatabase db) : super(db);
+class ModernLocationDao {
+  final Database _db;
 
-  // ---------------------------------------------------------------------------
-  // The generated mixin will be added after running build_runner:
-  //   with _$ModernLocationDaoMixin
-  // ---------------------------------------------------------------------------
+  ModernLocationDao(this._db);
 
-  /// 模糊查询：名称包含 [name] 的所有现代地名
-  Future<List<ModernLocation>> getByName(String name) {
-    return (select(modernLocations)
-          ..where((t) => t.name.like('%$name%')))
-        .get();
+  Future<List<ModernLocation>> getByName(String name) async {
+    final rows = await _db.query(
+      Schema.modernLocations,
+      where: 'name LIKE ?',
+      whereArgs: ['%$name%'],
+    );
+    return rows.map(ModernLocation.fromRow).toList();
   }
 
-  /// 精确查询：名称完全匹配的现代地名（可能为 null）
-  Future<ModernLocation?> getByNameExact(String name) {
-    return (select(modernLocations)..where((t) => t.name.equals(name)))
-        .getSingleOrNull();
+  Future<ModernLocation?> getByNameExact(String name) async {
+    final rows = await _db.query(
+      Schema.modernLocations,
+      where: 'name = ?',
+      whereArgs: [name],
+    );
+    if (rows.isEmpty) return null;
+    return ModernLocation.fromRow(rows.first);
   }
 
-  /// 根据经纬度范围查询现代地名
   Future<List<ModernLocation>> getByCoordinateRange(
     double minLat,
     double maxLat,
     double minLng,
     double maxLng,
-  ) {
-    return (select(modernLocations)
-          ..where((t) =>
-              t.latitude.isBiggerOrEqualValue(minLat) &
-              t.latitude.isSmallerOrEqualValue(maxLat) &
-              t.longitude.isBiggerOrEqualValue(minLng) &
-              t.longitude.isSmallerOrEqualValue(maxLng)))
-        .get();
+  ) async {
+    final rows = await _db.query(
+      Schema.modernLocations,
+      where: 'latitude >= ? AND latitude <= ? AND longitude >= ? AND longitude <= ?',
+      whereArgs: [minLat, maxLat, minLng, maxLng],
+    );
+    return rows.map(ModernLocation.fromRow).toList();
   }
 
-  /// 插入单条现代地名记录，返回新记录的 id
-  Future<int> insert(ModernLocationsCompanion entry) {
-    return into(modernLocations).insert(entry);
+  Future<int> insert(Map<String, dynamic> location) async {
+    return _db.insert(Schema.modernLocations, location);
   }
 
-  /// 批量插入现代地名记录
-  Future<void> insertAll(List<ModernLocationsCompanion> entries) {
-    return batch((b) {
-      b.insertAll(modernLocations, entries);
-    });
+  Future<void> insertAll(List<Map<String, dynamic>> entries) async {
+    final batch = _db.batch();
+    for (final entry in entries) {
+      batch.insert(Schema.modernLocations, entry);
+    }
+    await batch.commit(noResult: true);
   }
 }

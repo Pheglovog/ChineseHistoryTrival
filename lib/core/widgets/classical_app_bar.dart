@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../theme/app_colors.dart';
-import '../theme/app_typography.dart';
 
 /// 深色背景 + 金色底边的古典 AppBar
 class ClassicalAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -38,8 +37,5 @@ class ClassicalAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize {
-    final actionWidth = actions != null ? actions!.length * 48.0 : 0.0;
-    return Size.fromHeight(kToolbarHeight + 2);
-  }
+  Size get preferredSize => Size.fromHeight(kToolbarHeight + 2);
 }

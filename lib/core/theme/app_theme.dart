@@ -92,7 +92,7 @@ class AppTheme {
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: AppColors.gold.withOpacity(0.3)),
+          borderSide: BorderSide(color: AppColors.gold.withValues(alpha: 0.3)),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
@@ -115,20 +115,20 @@ class AppTheme {
       // Chip
       chipTheme: ChipThemeData(
         backgroundColor: AppColors.surface,
-        selectedColor: AppColors.primary.withOpacity(0.15),
+        selectedColor: AppColors.primary.withValues(alpha: 0.15),
         labelStyle: const TextStyle(
           fontFamily: AppTypography.fontFamily,
           fontSize: 12,
         ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
-          side: BorderSide(color: AppColors.gold.withOpacity(0.3)),
+          side: BorderSide(color: AppColors.gold.withValues(alpha: 0.3)),
         ),
       ),
 
       // Divider
       dividerTheme: DividerThemeData(
-        color: AppColors.gold.withOpacity(0.2),
+        color: AppColors.gold.withValues(alpha: 0.2),
         thickness: 0.5,
       ),
 

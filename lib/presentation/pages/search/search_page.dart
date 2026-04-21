@@ -9,9 +9,9 @@ import '../../../core/theme/app_typography.dart';
 import '../../../core/widgets/classical_app_bar.dart';
 import '../../../core/widgets/classical_card.dart';
 import '../../../domain/enums/admin_level.dart';
+import '../../../domain/entities/ancient_location.dart';
 import '../../providers/database_provider.dart';
 
-/// 搜索页 - 古代地名搜索，300ms 防抖
 class SearchPage extends ConsumerStatefulWidget {
   const SearchPage({super.key});
 
@@ -55,27 +55,12 @@ class _SearchPageState extends ConsumerState<SearchPage> {
     setState(() => _isSearching = true);
 
     final db = ref.read(databaseProvider);
-    // Search across all admin levels for dynasty 1 (Han)
-    final zhouResults =
-        await db.ancientLocationDao.getByDynastyAndLevel(1, 'zhou');
-    final junResults =
-        await db.ancientLocationDao.getByDynastyAndLevel(1, 'jun');
-    final xianResults =
-        await db.ancientLocationDao.getByDynastyAndLevel(1, 'xian');
-
-    final allResults = <AncientLocation>[
-      ...zhouResults,
-      ...junResults,
-      ...xianResults,
-    ];
-
-    final filtered = allResults
-        .where((loc) => loc.name.contains(_query))
-        .toList();
+    final dao = await db.ancientLocationDao;
+    final allResults = await dao.searchByName(_query);
 
     if (mounted) {
       setState(() {
-        _results = filtered;
+        _results = allResults;
         _isSearching = false;
       });
     }
@@ -91,7 +76,6 @@ class _SearchPageState extends ConsumerState<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
-    // Group results by admin level
     final zhouResults =
         _results.where((l) => l.adminLevel == AdminLevel.zhou).toList();
     final junResults =
@@ -100,10 +84,9 @@ class _SearchPageState extends ConsumerState<SearchPage> {
         _results.where((l) => l.adminLevel == AdminLevel.xian).toList();
 
     return Scaffold(
-      appBar: const ClassicalAppBar(title: '搜索地名'),
+      appBar: const ClassicalAppBar(title: '\u641c\u7d22\u5730\u540d'),
       body: Column(
         children: [
-          // Search bar
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
             child: TextField(
@@ -112,7 +95,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                 color: AppColors.textPrimary,
               ),
               decoration: InputDecoration(
-                hintText: '输入地名进行搜索...',
+                hintText: '\u8f93\u5165\u5730\u540d\u8fdb\u884c\u641c\u7d22...',
                 prefixIcon: const Icon(Icons.search, color: AppColors.textHint),
                 suffixIcon: _query.isNotEmpty
                     ? IconButton(
@@ -129,20 +112,18 @@ class _SearchPageState extends ConsumerState<SearchPage> {
               ),
             ),
           ),
-
-          // Results
           Expanded(
             child: _isSearching
                 ? const Center(child: CircularProgressIndicator())
                 : _query.isEmpty
                     ? _buildEmptyHint()
                     : _results.isEmpty
-                        ? const Center(child: Text('未找到相关地名'))
+                        ? const Center(child: Text('\u672a\u627e\u5230\u76f8\u5173\u5730\u540d'))
                         : ListView(
                             padding: const EdgeInsets.symmetric(vertical: 8),
                             children: [
                               if (zhouResults.isNotEmpty) ...[
-                                _SectionHeader(label: '州'),
+                                _SectionHeader(label: '\u5dde'),
                                 ...zhouResults.map((l) => _ResultCard(
                                       location: l,
                                       onTap: () => context
@@ -150,7 +131,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                                     )),
                               ],
                               if (junResults.isNotEmpty) ...[
-                                _SectionHeader(label: '郡'),
+                                _SectionHeader(label: '\u90e1'),
                                 ...junResults.map((l) => _ResultCard(
                                       location: l,
                                       onTap: () => context.go(
@@ -158,7 +139,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                                     )),
                               ],
                               if (xianResults.isNotEmpty) ...[
-                                _SectionHeader(label: '县'),
+                                _SectionHeader(label: '\u53bf'),
                                 ...xianResults.map((l) => _ResultCard(
                                       location: l,
                                       onTap: () => context
@@ -178,10 +159,10 @@ class _SearchPageState extends ConsumerState<SearchPage> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.search, size: 64, color: AppColors.textHint.withOpacity(0.5)),
+          Icon(Icons.search, size: 64, color: AppColors.textHint.withValues(alpha: 0.5)),
           const SizedBox(height: 16),
           Text(
-            '输入关键词搜索古代地名',
+            '\u8f93\u5165\u5173\u952e\u8bcd\u641c\u7d22\u53e4\u4ee3\u5730\u540d',
             style: AppTypography.bodyMedium.copyWith(
               color: AppColors.textHint,
             ),
@@ -238,7 +219,7 @@ class _ResultCard extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                 decoration: BoxDecoration(
-                  color: AppColors.primary.withOpacity(0.1),
+                  color: AppColors.primary.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: Text(

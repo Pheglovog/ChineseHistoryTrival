@@ -6,7 +6,7 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_typography.dart';
 import '../../../core/widgets/classical_app_bar.dart';
 import '../../../core/widgets/classical_card.dart';
-import '../../providers/location_provider.dart';
+import '../../providers/locations_provider.dart';
 
 /// 汉代十三州 - 网格卡片展示
 class ZhouListPage extends ConsumerWidget {

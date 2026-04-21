@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:amap_map/amap_map.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_typography.dart';
@@ -40,7 +39,7 @@ class QuickJumpButtons extends ConsumerWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
-                    color: AppColors.gold.withOpacity(0.5),
+                    color: AppColors.gold.withValues(alpha: 0.5),
                     width: 0.5,
                   ),
                 ),

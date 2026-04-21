@@ -80,7 +80,7 @@ class _InkWashPainter extends CustomPainter {
       final opacity = (1.0 - phase) * 0.4;
 
       final paint = Paint()
-        ..color = AppColors.ink.withOpacity(opacity)
+        ..color = AppColors.ink.withValues(alpha: opacity)
         ..style = PaintingStyle.fill
         ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10);
 
@@ -89,7 +89,7 @@ class _InkWashPainter extends CustomPainter {
 
     // Central dot
     final centerPaint = Paint()
-      ..color = AppColors.ink.withOpacity(0.6)
+      ..color = AppColors.ink.withValues(alpha: 0.6)
       ..style = PaintingStyle.fill;
     canvas.drawCircle(center, 4, centerPaint);
   }

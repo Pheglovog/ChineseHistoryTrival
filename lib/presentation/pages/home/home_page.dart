@@ -111,7 +111,7 @@ class _FeatureCard extends StatelessWidget {
             width: 48,
             height: 48,
             decoration: BoxDecoration(
-              color: AppColors.primary.withOpacity(0.1),
+              color: AppColors.primary.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(icon, color: AppColors.primary, size: 28),
@@ -155,27 +155,24 @@ class _StatisticsRow extends ConsumerWidget {
         Expanded(
           child: _StatCard(
             label: '州',
-            future: db.ancientLocationDao
-                .getByDynastyAndLevel(1, 'zhou')
-                .then((list) => list.length),
+            future: db.ancientLocationDao.then(
+                (dao) => dao.getByDynastyAndLevel(1, 'zhou').then((list) => list.length)),
           ),
         ),
         const SizedBox(width: 8),
         Expanded(
           child: _StatCard(
             label: '郡',
-            future: db.ancientLocationDao
-                .getByDynastyAndLevel(1, 'jun')
-                .then((list) => list.length),
+            future: db.ancientLocationDao.then(
+                (dao) => dao.getByDynastyAndLevel(1, 'jun').then((list) => list.length)),
           ),
         ),
         const SizedBox(width: 8),
         Expanded(
           child: _StatCard(
             label: '县',
-            future: db.ancientLocationDao
-                .getByDynastyAndLevel(1, 'xian')
-                .then((list) => list.length),
+            future: db.ancientLocationDao.then(
+                (dao) => dao.getByDynastyAndLevel(1, 'xian').then((list) => list.length)),
           ),
         ),
       ],

@@ -1,8 +1,9 @@
-import 'package:drift/drift.dart';
+import 'package:sqflite/sqflite.dart';
 
-import '../local/database/app_database.dart';
-import '../local/tables/modern_locations_table.dart';
-import '../local/tables/location_matches_table.dart';
+import '../../domain/entities/ancient_location.dart';
+import '../../domain/entities/modern_location.dart';
+import '../../domain/entities/location_match.dart';
+import '../local/database/schema.dart';
 
 /// Internal class representing a known ancient-to-modern mapping.
 class _KnownMapping {
@@ -14,9 +15,8 @@ class _KnownMapping {
 }
 
 class MatchingRepository {
-  final AppDatabase _db;
+  final Future<Database> _dbFuture;
 
-  /// Known mappings for names that changed completely.
   static const Map<String, _KnownMapping> _knownMappings = {
     '长安': _KnownMapping('西安市', 34.26, 108.93, '陕西省'),
     '洛阳': _KnownMapping('洛阳市', 34.62, 112.45, '河南省'),
@@ -28,52 +28,70 @@ class MatchingRepository {
     '江陵': _KnownMapping('荆州市', 30.33, 112.24, '湖北省'),
   };
 
-  MatchingRepository(this._db);
+  MatchingRepository(this._dbFuture);
 
   /// Match an ancient location to modern coordinates.
   /// Returns the LocationMatch if found, null otherwise.
   Future<LocationMatch?> match(AncientLocation ancient) async {
-    // 0. Check cache first
-    final cached = await _db.locationMatchDao.getCachedMatch(ancient.id);
-    if (cached != null) return cached;
+    final db = await _dbFuture;
 
-    // Level 1: Exact name match (strip suffixes like 市/区/县)
+    // Check cache first
+    final cachedRows = await db.query(
+      Schema.locationMatches,
+      where: 'ancient_location_id = ? AND verified = 1',
+      whereArgs: [ancient.id],
+      orderBy: 'confidence DESC',
+      limit: 1,
+    );
+    if (cachedRows.isNotEmpty) {
+      return LocationMatch.fromRow(cachedRows.first);
+    }
+
+    // Level 1: Exact name match
     final exact = await _exactMatch(ancient.name);
     if (exact != null) {
       return _saveMatch(ancient.id, exact, 'exact', 0.95, 'manual');
     }
 
-    // Level 2: Substring/similarity match
+    // Level 2: Substring match
     final similar = await _substringMatch(ancient.name);
     if (similar != null) {
       return _saveMatch(ancient.id, similar, 'approximate', 0.7, 'manual');
     }
 
     // Level 3: Known mapping dictionary
-    final mapped = _dictionaryMatch(ancient.name);
+    final mapped = _knownMappings[ancient.name];
     if (mapped != null) {
       return _saveKnownMapping(ancient.id, mapped);
     }
 
-    return null; // Needs AI fallback
+    return null;
   }
 
-  /// Level 1: Exact name comparison with suffix stripping
   Future<ModernLocation?> _exactMatch(String ancientName) async {
+    final db = await _dbFuture;
     final cleanName = _stripSuffix(ancientName);
-    final results = await _db.modernLocationDao.getByName(ancientName);
-
-    for (final loc in results) {
-      final cleanModern = _stripSuffix(loc.name);
-      if (cleanName == cleanModern) return loc;
+    final rows = await db.query(
+      Schema.modernLocations,
+      where: 'name LIKE ?',
+      whereArgs: ['%$ancientName%'],
+    );
+    for (final row in rows) {
+      final loc = ModernLocation.fromRow(row);
+      if (_stripSuffix(loc.name) == cleanName) return loc;
     }
     return null;
   }
 
-  /// Level 2: Check if ancient name is substring of modern name
   Future<ModernLocation?> _substringMatch(String ancientName) async {
-    final results = await _db.modernLocationDao.getByName(ancientName);
-    for (final loc in results) {
+    final db = await _dbFuture;
+    final rows = await db.query(
+      Schema.modernLocations,
+      where: 'name LIKE ?',
+      whereArgs: ['%$ancientName%'],
+    );
+    for (final row in rows) {
+      final loc = ModernLocation.fromRow(row);
       if (loc.name.contains(ancientName) ||
           ancientName.contains(_stripSuffix(loc.name))) {
         return loc;
@@ -82,12 +100,6 @@ class MatchingRepository {
     return null;
   }
 
-  /// Level 3: Known mapping dictionary
-  _KnownMapping? _dictionaryMatch(String ancientName) {
-    return _knownMappings[ancientName];
-  }
-
-  /// Save a match to cache
   Future<LocationMatch> _saveMatch(
     int ancientId,
     ModernLocation modern,
@@ -95,56 +107,59 @@ class MatchingRepository {
     double confidence,
     String source,
   ) async {
-    final id = await _db.locationMatchDao.insert(
-      LocationMatchesCompanion.insert(
-        ancientLocationId: ancientId,
-        modernLocationId: modern.id,
-        matchType: matchType,
-        confidence: confidence,
-        source: source,
-      ),
+    final db = await _dbFuture;
+    final id = await db.insert(Schema.locationMatches, {
+      'ancient_location_id': ancientId,
+      'modern_location_id': modern.id,
+      'match_type': matchType,
+      'confidence': confidence,
+      'source': source,
+    });
+    final rows = await db.query(
+      Schema.locationMatches,
+      where: 'id = ?',
+      whereArgs: [id],
     );
-    return (await (_db.select(_db.locationMatches)
-          ..where((t) => t.id.equals(id)))
-        .getSingle());
+    return LocationMatch.fromRow(rows.first);
   }
 
-  /// Save a known mapping match (creates modern location + match)
   Future<LocationMatch> _saveKnownMapping(
     int ancientId,
     _KnownMapping mapping,
   ) async {
-    // Check if modern location already exists
-    final existing = await _db.modernLocationDao.getByNameExact(mapping.name);
-    int modernId;
-    if (existing != null) {
-      modernId = existing.id;
-    } else {
-      modernId = await _db.modernLocationDao.insert(
-        ModernLocationsCompanion.insert(
-          name: mapping.name,
-          province: Value(mapping.province),
-          latitude: mapping.lat,
-          longitude: mapping.lng,
-          source: 'manual',
-        ),
-      );
-    }
-    final id = await _db.locationMatchDao.insert(
-      LocationMatchesCompanion.insert(
-        ancientLocationId: ancientId,
-        modernLocationId: modernId,
-        matchType: 'exact',
-        confidence: 0.9,
-        source: 'manual',
-      ),
+    final db = await _dbFuture;
+    final existingRows = await db.query(
+      Schema.modernLocations,
+      where: 'name = ?',
+      whereArgs: [mapping.name],
     );
-    return (await (_db.select(_db.locationMatches)
-          ..where((t) => t.id.equals(id)))
-        .getSingle());
+    int modernId;
+    if (existingRows.isNotEmpty) {
+      modernId = existingRows.first['id'] as int;
+    } else {
+      modernId = await db.insert(Schema.modernLocations, {
+        'name': mapping.name,
+        'province': mapping.province,
+        'latitude': mapping.lat,
+        'longitude': mapping.lng,
+        'source': 'manual',
+      });
+    }
+    final id = await db.insert(Schema.locationMatches, {
+      'ancient_location_id': ancientId,
+      'modern_location_id': modernId,
+      'match_type': 'exact',
+      'confidence': 0.9,
+      'source': 'manual',
+    });
+    final rows = await db.query(
+      Schema.locationMatches,
+      where: 'id = ?',
+      whereArgs: [id],
+    );
+    return LocationMatch.fromRow(rows.first);
   }
 
-  /// Strip common Chinese administrative suffixes
   String _stripSuffix(String name) {
     return name.replaceAll(RegExp(r'(市|区|县|省|镇|乡|路|街|道)$'), '');
   }

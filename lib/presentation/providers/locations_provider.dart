@@ -1,26 +1,31 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../data/local/database/app_database.dart';
+import '../../domain/entities/ancient_location.dart';
 import 'database_provider.dart';
-import 'current_dynasty_provider.dart';
 
-/// Reactive locations list for the current dynasty
-final locationsByDynastyProvider = StreamProvider<List<AncientLocation>>((ref) {
+final zhouListProvider = FutureProvider<List<AncientLocation>>((ref) async {
   final db = ref.watch(databaseProvider);
-  final dynastyId = ref.watch(currentDynastyIdProvider);
-  return db.ancientLocationDao.watchByDynasty(dynastyId);
+  final dao = await db.ancientLocationDao;
+  return dao.getByDynastyAndLevel(1, 'zhou');
 });
 
-/// Locations filtered by admin level
-final locationsByDynastyAndLevelProvider =
-    StreamProvider.family<List<AncientLocation>, String>((ref, adminLevel) {
+final junListProvider =
+    FutureProvider.family<List<AncientLocation>, int>((ref, parentLocationId) async {
   final db = ref.watch(databaseProvider);
-  final dynastyId = ref.watch(currentDynastyIdProvider);
-  return db.ancientLocationDao.watchByDynastyAndLevel(dynastyId, adminLevel);
+  final dao = await db.ancientLocationDao;
+  return dao.getChildren(parentLocationId);
 });
 
-/// Children of a specific location
-final locationChildrenProvider =
-    StreamProvider.family<List<AncientLocation>, int>((ref, parentId) {
+final xianListProvider =
+    FutureProvider.family<List<AncientLocation>, int>((ref, parentLocationId) async {
   final db = ref.watch(databaseProvider);
-  return db.ancientLocationDao.watchChildren(parentId);
+  final dao = await db.ancientLocationDao;
+  return dao.getChildren(parentLocationId);
+});
+
+final locationCountsProvider =
+    FutureProvider.family<int, String>((ref, adminLevel) async {
+  final db = ref.watch(databaseProvider);
+  final dao = await db.ancientLocationDao;
+  final locations = await dao.getByDynastyAndLevel(1, adminLevel);
+  return locations.length;
 });

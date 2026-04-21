@@ -1,9 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../domain/entities/ancient_location.dart';
 import '../../data/repositories/matching_repository.dart';
 import '../../data/local/database/app_database.dart';
 import 'database_provider.dart';
 
-/// Matching workflow state
 enum MatchingStatus { idle, matching, done, error }
 
 class MatchingState {
@@ -40,11 +40,10 @@ final matchingWorkflowProvider =
 });
 
 class MatchingWorkflowNotifier extends StateNotifier<MatchingState> {
-  final AppDatabase _db;
   late final MatchingRepository _matchingRepo;
 
-  MatchingWorkflowNotifier(this._db) : super(const MatchingState()) {
-    _matchingRepo = MatchingRepository(_db);
+  MatchingWorkflowNotifier(AppDatabase _) : super(const MatchingState()) {
+    _matchingRepo = MatchingRepository(AppDatabase.database);
   }
 
   Future<void> runMatching(List<AncientLocation> locations) async {

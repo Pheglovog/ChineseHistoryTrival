@@ -1,70 +1,56 @@
-import 'package:drift/drift.dart';
-import '../tables/location_matches_table.dart';
-import '../database/app_database.dart';
+import 'package:sqflite/sqflite.dart';
 
-part 'location_match_dao.g.dart';
+import '../../../domain/entities/location_match.dart';
+import '../database/schema.dart';
 
-/// 古今地名对照数据访问对象
-@DriftAccessor(tables: [LocationMatches])
-class LocationMatchDao extends DatabaseAccessor<AppDatabase> {
-  LocationMatchDao(AppDatabase db) : super(db);
+class LocationMatchDao {
+  final Database _db;
 
-  // ---------------------------------------------------------------------------
-  // The generated mixin will be added after running build_runner:
-  //   with _$LocationMatchDaoMixin
-  // ---------------------------------------------------------------------------
+  LocationMatchDao(this._db);
 
-  /// 获取指定古代地名的所有匹配记录，按置信度降序排列
-  Future<List<LocationMatch>> getByAncientLocationId(int ancientLocationId) {
-    return (select(locationMatches)
-          ..where((t) => t.ancientLocationId.equals(ancientLocationId))
-          ..orderBy([
-            (t) => OrderingTerm.desc(t.confidence),
-          ]))
-        .get();
+  Future<List<LocationMatch>> getByAncientLocationId(int ancientLocationId) async {
+    final rows = await _db.query(
+      Schema.locationMatches,
+      where: 'ancient_location_id = ?',
+      whereArgs: [ancientLocationId],
+      orderBy: 'confidence DESC',
+    );
+    return rows.map(LocationMatch.fromRow).toList();
   }
 
-  /// 获取指定古代地名的最佳缓存匹配（置信度最高的已验证匹配）
-  Future<LocationMatch?> getCachedMatch(int ancientLocationId) {
-    return (select(locationMatches)
-          ..where((t) =>
-              t.ancientLocationId.equals(ancientLocationId) & t.verified.equals(true))
-          ..orderBy([
-            (t) => OrderingTerm.desc(t.confidence),
-          ])
-          ..limit(1))
-        .getSingleOrNull();
+  Future<LocationMatch?> getCachedMatch(int ancientLocationId) async {
+    final rows = await _db.query(
+      Schema.locationMatches,
+      where: 'ancient_location_id = ? AND verified = 1',
+      whereArgs: [ancientLocationId],
+      orderBy: 'confidence DESC',
+      limit: 1,
+    );
+    if (rows.isEmpty) return null;
+    return LocationMatch.fromRow(rows.first);
   }
 
-  /// 监听指定古代地名的匹配记录（响应式），按置信度降序
-  Stream<List<LocationMatch>> watchByAncientLocationId(int ancientLocationId) {
-    return (select(locationMatches)
-          ..where((t) => t.ancientLocationId.equals(ancientLocationId))
-          ..orderBy([
-            (t) => OrderingTerm.desc(t.confidence),
-          ]))
-        .watch();
+  Stream<List<LocationMatch>> watchByAncientLocationId(int ancientLocationId) async* {
+    yield await getByAncientLocationId(ancientLocationId);
   }
 
-  /// 插入单条匹配记录，返回新记录的 id
-  Future<int> insert(LocationMatchesCompanion entry) {
-    return into(locationMatches).insert(entry);
+  Future<int> insert(Map<String, dynamic> match) async {
+    return _db.insert(Schema.locationMatches, match);
   }
 
-  /// 批量插入匹配记录
-  Future<void> insertAll(List<LocationMatchesCompanion> entries) {
-    return batch((b) {
-      b.insertAll(locationMatches, entries);
-    });
+  Future<void> insertAll(List<Map<String, dynamic>> entries) async {
+    final batch = _db.batch();
+    for (final entry in entries) {
+      batch.insert(Schema.locationMatches, entry);
+    }
+    await batch.commit(noResult: true);
   }
 
-  /// 检查指定古代地名是否已存在匹配记录
   Future<bool> hasMatch(int ancientLocationId) async {
-    final query = selectOnly(locationMatches)
-      ..addColumns([locationMatches.id.count()])
-      ..where(locationMatches.ancientLocationId.equals(ancientLocationId));
-    final row = await query.getSingle();
-    final count = row.read(locationMatches.id.count()) ?? 0;
-    return count > 0;
+    final result = await _db.rawQuery(
+      'SELECT COUNT(*) as count FROM ${Schema.locationMatches} WHERE ancient_location_id = ?',
+      [ancientLocationId],
+    );
+    return (Sqflite.firstIntValue(result) ?? 0) > 0;
   }
 }

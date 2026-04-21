@@ -2,21 +2,18 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:drift/drift.dart';
+import 'package:sqflite/sqflite.dart';
 
 import '../local/database/app_database.dart';
-import '../local/tables/dynasties_table.dart';
-import '../local/tables/ancient_locations_table.dart';
-import '../local/tables/modern_locations_table.dart';
-import '../local/tables/location_matches_table.dart';
+import '../local/database/schema.dart';
 
 class DataSeeder {
   static const String _seedVersionKey = 'seed_version';
   static const int _currentSeedVersion = 1;
 
-  final AppDatabase _db;
+  final Future<Database> _dbFuture;
 
-  DataSeeder(this._db);
+  DataSeeder(AppDatabase appDb) : _dbFuture = AppDatabase.database;
 
   /// Check if seed data needs to be imported and import if needed.
   /// Returns true if data was imported, false if skipped.
@@ -35,32 +32,32 @@ class DataSeeder {
   }
 
   Future<void> _importSeedData() async {
+    final db = await _dbFuture;
     final jsonStr = await rootBundle.loadString(
       'assets/data/han_dynasty_locations.json',
     );
     final data = json.decode(jsonStr) as Map<String, dynamic>;
 
-    await _db.transaction(() async {
+    await db.transaction((txn) async {
       // 1. Insert dynasty
       final dynasty = data['dynasty'] as Map<String, dynamic>;
-      final dynastyId = await _db.into(_db.dynasties).insert(
-            DynastiesCompanion.insert(
-              name: dynasty['name'] as String,
-              nameEn: Value(dynasty['nameEn'] as String?),
-              startYear: dynasty['startYear'] as int,
-              endYear: dynasty['endYear'] as int,
-              subPeriod: Value(dynasty['subPeriod'] as String?),
-              description: Value(dynasty['description'] as String?),
-            ),
-          );
+      final dynastyId = await txn.insert(Schema.dynasties, {
+        'name': dynasty['name'] as String,
+        'name_en': dynasty['nameEn'] as String?,
+        'start_year': dynasty['startYear'] as int,
+        'end_year': dynasty['endYear'] as int,
+        'sub_period': dynasty['subPeriod'] as String?,
+        'description': dynasty['description'] as String?,
+      });
 
       // 2. Insert locations recursively
       final locations = data['locations'] as List<dynamic>;
-      await _importLocations(locations, dynastyId, null);
+      await _importLocations(txn, locations, dynastyId, null);
     });
   }
 
   Future<void> _importLocations(
+    Transaction txn,
     List<dynamic> locations,
     int dynastyId,
     int? parentLocationId,
@@ -68,60 +65,47 @@ class DataSeeder {
     for (final locData in locations) {
       final loc = locData as Map<String, dynamic>;
 
-      // Insert ancient location
-      final ancientId = await _db.into(_db.ancientLocations).insert(
-            AncientLocationsCompanion.insert(
-              dynastyId: dynastyId,
-              name: loc['name'] as String,
-              alias: Value(loc['alias'] as String?),
-              adminLevel: loc['adminLevel'] as String,
-              parentLocationId: Value(parentLocationId),
-              description: Value(loc['description'] as String?),
-              yearEstablished: Value(loc['yearEstablished'] as int?),
-              yearAbolished: Value(loc['yearAbolished'] as int?),
-              historicalSignificance:
-                  Value(loc['historicalSignificance'] as String?),
-            ),
-          );
+      final ancientId = await txn.insert(Schema.ancientLocations, {
+        'dynasty_id': dynastyId,
+        'name': loc['name'] as String,
+        'alias': loc['alias'] as String?,
+        'admin_level': loc['adminLevel'] as String,
+        'parent_location_id': parentLocationId,
+        'description': loc['description'] as String?,
+        'year_established': loc['yearEstablished'] as int?,
+        'year_abolished': loc['yearAbolished'] as int?,
+        'historical_significance': loc['historicalSignificance'] as String?,
+      });
 
-      // Insert modern match if present
       final modernMatch = loc['modernMatch'] as Map<String, dynamic>?;
       if (modernMatch != null) {
-        final modernId = await _db.into(_db.modernLocations).insert(
-              ModernLocationsCompanion.insert(
-                name: modernMatch['name'] as String,
-                province: Value(modernMatch['province'] as String?),
-                city: Value(modernMatch['city'] as String?),
-                district: Value(modernMatch['district'] as String?),
-                latitude: (modernMatch['latitude'] as num).toDouble(),
-                longitude: (modernMatch['longitude'] as num).toDouble(),
-                amapPoiId: Value(modernMatch['amapPoiId'] as String?),
-                source: modernMatch['source'] as String? ?? 'manual',
-                confidence: Value(
-                  (modernMatch['confidence'] as num?)?.toDouble(),
-                ),
-                verified: Value(modernMatch['verified'] as bool? ?? false),
-              ),
-            );
+        final modernId = await txn.insert(Schema.modernLocations, {
+          'name': modernMatch['name'] as String,
+          'province': modernMatch['province'] as String?,
+          'city': modernMatch['city'] as String?,
+          'district': modernMatch['district'] as String?,
+          'latitude': (modernMatch['latitude'] as num).toDouble(),
+          'longitude': (modernMatch['longitude'] as num).toDouble(),
+          'amap_poi_id': modernMatch['amapPoiId'] as String?,
+          'source': modernMatch['source'] as String? ?? 'manual',
+          'confidence': (modernMatch['confidence'] as num?)?.toDouble(),
+          'verified': (modernMatch['verified'] as bool? ?? false) ? 1 : 0,
+        });
 
-        // Insert match relation
-        await _db.into(_db.locationMatches).insert(
-              LocationMatchesCompanion.insert(
-                ancientLocationId: ancientId,
-                modernLocationId: modernId,
-                matchType: modernMatch['matchType'] as String? ?? 'exact',
-                confidence: (modernMatch['confidence'] as num).toDouble(),
-                source: modernMatch['source'] as String? ?? 'manual',
-                notes: Value(modernMatch['notes'] as String?),
-                verified: Value(modernMatch['verified'] as bool? ?? false),
-              ),
-            );
+        await txn.insert(Schema.locationMatches, {
+          'ancient_location_id': ancientId,
+          'modern_location_id': modernId,
+          'match_type': modernMatch['matchType'] as String? ?? 'exact',
+          'confidence': (modernMatch['confidence'] as num).toDouble(),
+          'source': modernMatch['source'] as String? ?? 'manual',
+          'notes': modernMatch['notes'] as String?,
+          'verified': (modernMatch['verified'] as bool? ?? false) ? 1 : 0,
+        });
       }
 
-      // Recursively import children
       final children = loc['children'] as List<dynamic>?;
       if (children != null && children.isNotEmpty) {
-        await _importLocations(children, dynastyId, ancientId);
+        await _importLocations(txn, children, dynastyId, ancientId);
       }
     }
   }

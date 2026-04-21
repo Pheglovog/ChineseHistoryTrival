@@ -31,7 +31,7 @@ class LocationBottomSheet extends StatelessWidget {
               width: 40,
               height: 4,
               decoration: BoxDecoration(
-                color: AppColors.gold.withOpacity(0.4),
+                color: AppColors.gold.withValues(alpha: 0.4),
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
@@ -41,7 +41,7 @@ class LocationBottomSheet extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Text(
-              location.name ?? '',
+              location.name,
               style: AppTypography.headlineMedium.copyWith(
                 color: AppColors.textPrimary,
               ),
@@ -52,7 +52,7 @@ class LocationBottomSheet extends StatelessWidget {
           // Admin level badge
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: _buildLevelBadge(location.adminLevel?.toString() ?? ''),
+            child: _buildLevelBadge(location.adminLevel.toString()),
           ),
           const SizedBox(height: 16),
 
@@ -73,7 +73,7 @@ class LocationBottomSheet extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
       decoration: BoxDecoration(
-        color: AppColors.primary.withOpacity(0.1),
+        color: AppColors.primary.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: AppColors.primary, width: 0.5),
       ),

@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../presentation/pages/splash/splash_page.dart';
@@ -8,7 +7,6 @@ import '../../presentation/pages/browse/zhou_list_page.dart';
 import '../../presentation/pages/browse/jun_list_page.dart';
 import '../../presentation/pages/browse/xian_list_page.dart';
 import '../../presentation/pages/search/search_page.dart';
-import '../theme/app_colors.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: '/splash',

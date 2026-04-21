@@ -1,64 +1,61 @@
-import 'dart:io';
-
-import 'package:drift/drift.dart';
-import 'package:drift/native.dart';
-import 'package:path_provider/path_provider.dart';
+import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart' as p;
 
-import '../tables/dynasties_table.dart';
-import '../tables/ancient_locations_table.dart';
-import '../tables/modern_locations_table.dart';
-import '../tables/location_matches_table.dart';
+import 'schema.dart';
 import '../daos/dynasty_dao.dart';
 import '../daos/ancient_location_dao.dart';
 import '../daos/modern_location_dao.dart';
 import '../daos/location_match_dao.dart';
 
-part 'app_database.g.dart';
+class AppDatabase {
+  static Database? _database;
 
-@DriftDatabase(
-  tables: [
-    Dynasties,
-    AncientLocations,
-    ModernLocations,
-    LocationMatches,
-  ],
-  daos: [
-    DynastyDao,
-    AncientLocationDao,
-    ModernLocationDao,
-    LocationMatchDao,
-  ],
-)
-class AppDatabase extends _$AppDatabase {
-  AppDatabase() : super(_openConnection());
+  static Future<Database> get database async {
+    _database ??= await _initDatabase();
+    return _database!;
+  }
 
-  AppDatabase.forTesting(super.e);
+  static Future<Database> _initDatabase() async {
+    final dbPath = await getDatabasesPath();
+    final path = p.join(dbPath, Schema.databaseName);
 
-  @override
-  int get schemaVersion => 1;
+    return openDatabase(
+      path,
+      version: Schema.version,
+      onCreate: (db, version) async {
+        await db.execute(Schema.createDynasties);
+        await db.execute(Schema.createAncientLocations);
+        await db.execute(Schema.createModernLocations);
+        await db.execute(Schema.createLocationMatches);
+        await db.execute(Schema.createIndexDynastyAdmin);
+        await db.execute(Schema.createIndexLatLng);
+      },
+    );
+  }
 
-  @override
-  MigrationStrategy get migration => MigrationStrategy(
-        onCreate: (Migrator m) async {
-          await m.createAll();
-        },
-        onUpgrade: (Migrator m, int from, int to) async {
-          // Future migrations go here
-        },
-      );
+  // Lazy DAO singletons
+  DynastyDao? _dynastyDao;
+  AncientLocationDao? _ancientLocationDao;
+  ModernLocationDao? _modernLocationDao;
+  LocationMatchDao? _locationMatchDao;
 
-  // DAO accessors
-  DynastyDao get dynastyDao => DynastyDao(this);
-  AncientLocationDao get ancientLocationDao => AncientLocationDao(this);
-  ModernLocationDao get modernLocationDao => ModernLocationDao(this);
-  LocationMatchDao get locationMatchDao => LocationMatchDao(this);
-}
+  Future<DynastyDao> get dynastyDao async {
+    _dynastyDao ??= DynastyDao(await database);
+    return _dynastyDao!;
+  }
 
-LazyDatabase _openConnection() {
-  return LazyDatabase(() async {
-    final dbFolder = await getApplicationDocumentsDirectory();
-    final file = File(p.join(dbFolder.path, 'huaxia_footprint.db'));
-    return NativeDatabase.createInBackground(file);
-  });
+  Future<AncientLocationDao> get ancientLocationDao async {
+    _ancientLocationDao ??= AncientLocationDao(await database);
+    return _ancientLocationDao!;
+  }
+
+  Future<ModernLocationDao> get modernLocationDao async {
+    _modernLocationDao ??= ModernLocationDao(await database);
+    return _modernLocationDao!;
+  }
+
+  Future<LocationMatchDao> get locationMatchDao async {
+    _locationMatchDao ??= LocationMatchDao(await database);
+    return _locationMatchDao!;
+  }
 }

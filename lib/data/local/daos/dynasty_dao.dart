@@ -1,44 +1,41 @@
-import 'package:drift/drift.dart';
-import '../tables/dynasties_table.dart';
-import '../database/app_database.dart';
+import 'package:sqflite/sqflite.dart';
 
-part 'dynasty_dao.g.dart';
+import '../../../domain/entities/dynasty.dart';
+import '../database/schema.dart';
 
-/// 朝代数据访问对象
-@DriftAccessor(tables: [Dynasties])
-class DynastyDao extends DatabaseAccessor<AppDatabase> {
-  DynastyDao(AppDatabase db) : super(db);
+class DynastyDao {
+  final Database _db;
 
-  // ---------------------------------------------------------------------------
-  // The generated mixin will be added after running build_runner:
-  //   with _$DynastyDaoMixin
-  // Until then we access tables through the attachedDatabase helper.
-  // ---------------------------------------------------------------------------
+  DynastyDao(this._db);
 
-  /// 获取所有朝代列表
-  Future<List<Dynasty>> getAllDynasties() {
-    return select(dynasties).get();
+  Future<List<Dynasty>> getAllDynasties() async {
+    final rows = await _db.query(Schema.dynasties, orderBy: 'start_year');
+    return rows.map(Dynasty.fromRow).toList();
   }
 
-  /// 监听所有朝代列表（响应式）
-  Stream<List<Dynasty>> watchAllDynasties() {
-    return select(dynasties).watch();
+  Stream<List<Dynasty>> watchAllDynasties() async* {
+    yield await getAllDynasties();
   }
 
-  /// 根据 ID 获取单个朝代
-  Future<Dynasty> getDynastyById(int id) {
-    return (select(dynasties)..where((t) => t.id.equals(id))).getSingle();
+  Future<Dynasty> getDynastyById(int id) async {
+    final rows = await _db.query(
+      Schema.dynasties,
+      where: 'id = ?',
+      whereArgs: [id],
+    );
+    if (rows.isEmpty) throw StateError('Dynasty $id not found');
+    return Dynasty.fromRow(rows.first);
   }
 
-  /// 插入单条朝代记录，返回新记录的 id
-  Future<int> insertDynasty(DynastiesCompanion dynasty) {
-    return into(dynasties).insert(dynasty);
+  Future<int> insertDynasty(Map<String, dynamic> dynasty) async {
+    return _db.insert(Schema.dynasties, dynasty);
   }
 
-  /// 批量插入朝代记录
-  Future<void> insertDynasties(List<DynastiesCompanion> dynastiesList) {
-    return batch((b) {
-      b.insertAll(dynasties, dynastiesList);
-    });
+  Future<void> insertDynasties(List<Map<String, dynamic>> dynastiesList) async {
+    final batch = _db.batch();
+    for (final dynasty in dynastiesList) {
+      batch.insert(Schema.dynasties, dynasty);
+    }
+    await batch.commit(noResult: true);
   }
 }
