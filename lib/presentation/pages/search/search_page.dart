@@ -11,6 +11,7 @@ import '../../../core/widgets/classical_card.dart';
 import '../../../domain/enums/admin_level.dart';
 import '../../../domain/entities/ancient_location.dart';
 import '../../providers/database_provider.dart';
+import '../../providers/current_dynasty_provider.dart';
 
 class SearchPage extends ConsumerStatefulWidget {
   const SearchPage({super.key});
@@ -25,6 +26,8 @@ class _SearchPageState extends ConsumerState<SearchPage> {
   String _query = '';
   List<AncientLocation> _results = [];
   bool _isSearching = false;
+  AdminLevel? _levelFilter;
+  String _sortBy = 'relevance'; // relevance, name, level
 
   @override
   void initState() {
@@ -55,8 +58,9 @@ class _SearchPageState extends ConsumerState<SearchPage> {
     setState(() => _isSearching = true);
 
     final db = ref.read(databaseProvider);
+    final dynastyId = ref.read(currentDynastyIdProvider);
     final dao = await db.ancientLocationDao;
-    final allResults = await dao.searchByName(_query);
+    final allResults = await dao.searchByName(_query, dynastyId: dynastyId);
 
     if (mounted) {
       setState(() {
@@ -64,6 +68,23 @@ class _SearchPageState extends ConsumerState<SearchPage> {
         _isSearching = false;
       });
     }
+  }
+
+  List<AncientLocation> get _filteredResults {
+    var results = _results;
+    if (_levelFilter != null) {
+      results = results.where((l) => l.adminLevel == _levelFilter).toList();
+    }
+    switch (_sortBy) {
+      case 'name':
+        results.sort((a, b) => a.name.compareTo(b.name));
+      case 'level':
+        const order = {AdminLevel.zhou: 0, AdminLevel.jun: 1, AdminLevel.xian: 2};
+        results.sort((a, b) => order[a.adminLevel]!.compareTo(order[b.adminLevel]!));
+      default:
+        break; // relevance = default order from DB
+    }
+    return results;
   }
 
   @override
@@ -76,17 +97,13 @@ class _SearchPageState extends ConsumerState<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
-    final zhouResults =
-        _results.where((l) => l.adminLevel == AdminLevel.zhou).toList();
-    final junResults =
-        _results.where((l) => l.adminLevel == AdminLevel.jun).toList();
-    final xianResults =
-        _results.where((l) => l.adminLevel == AdminLevel.xian).toList();
+    final filtered = _filteredResults;
 
     return Scaffold(
-      appBar: const ClassicalAppBar(title: '\u641c\u7d22\u5730\u540d'),
+      appBar: const ClassicalAppBar(title: '搜索地名'),
       body: Column(
         children: [
+          // Search field
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
             child: TextField(
@@ -95,7 +112,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                 color: AppColors.textPrimary,
               ),
               decoration: InputDecoration(
-                hintText: '\u8f93\u5165\u5730\u540d\u8fdb\u884c\u641c\u7d22...',
+                hintText: '输入地名进行搜索...',
                 prefixIcon: const Icon(Icons.search, color: AppColors.textHint),
                 suffixIcon: _query.isNotEmpty
                     ? IconButton(
@@ -112,41 +129,92 @@ class _SearchPageState extends ConsumerState<SearchPage> {
               ),
             ),
           ),
+
+          // Filter and sort row
+          if (_results.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+              child: Row(
+                children: [
+                  // Level filter chips
+                  Expanded(
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          _FilterChip(
+                            label: '全部',
+                            selected: _levelFilter == null,
+                            onTap: () => setState(() => _levelFilter = null),
+                          ),
+                          const SizedBox(width: 6),
+                          _FilterChip(
+                            label: '州',
+                            selected: _levelFilter == AdminLevel.zhou,
+                            onTap: () =>
+                                setState(() => _levelFilter = AdminLevel.zhou),
+                          ),
+                          const SizedBox(width: 6),
+                          _FilterChip(
+                            label: '郡',
+                            selected: _levelFilter == AdminLevel.jun,
+                            onTap: () =>
+                                setState(() => _levelFilter = AdminLevel.jun),
+                          ),
+                          const SizedBox(width: 6),
+                          _FilterChip(
+                            label: '县',
+                            selected: _levelFilter == AdminLevel.xian,
+                            onTap: () =>
+                                setState(() => _levelFilter = AdminLevel.xian),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  // Sort button
+                  PopupMenuButton<String>(
+                    initialValue: _sortBy,
+                    onSelected: (value) => setState(() => _sortBy = value),
+                    itemBuilder: (_) => [
+                      const PopupMenuItem(value: 'relevance', child: Text('相关度')),
+                      const PopupMenuItem(value: 'name', child: Text('名称')),
+                      const PopupMenuItem(value: 'level', child: Text('行政级别')),
+                    ],
+                    child: const Icon(Icons.sort, color: AppColors.gold, size: 20),
+                  ),
+                ],
+              ),
+            ),
+
+          // Results
           Expanded(
             child: _isSearching
-                ? const Center(child: CircularProgressIndicator())
+                ? const Center(child: CircularProgressIndicator(color: AppColors.gold))
                 : _query.isEmpty
                     ? _buildEmptyHint()
-                    : _results.isEmpty
-                        ? const Center(child: Text('\u672a\u627e\u5230\u76f8\u5173\u5730\u540d'))
-                        : ListView(
-                            padding: const EdgeInsets.symmetric(vertical: 8),
-                            children: [
-                              if (zhouResults.isNotEmpty) ...[
-                                _SectionHeader(label: '\u5dde'),
-                                ...zhouResults.map((l) => _ResultCard(
-                                      location: l,
-                                      onTap: () => context
-                                          .go('/browse/jun?parentId=${l.id}'),
-                                    )),
-                              ],
-                              if (junResults.isNotEmpty) ...[
-                                _SectionHeader(label: '\u90e1'),
-                                ...junResults.map((l) => _ResultCard(
-                                      location: l,
-                                      onTap: () => context.go(
-                                          '/browse/xian?parentId=${l.id}'),
-                                    )),
-                              ],
-                              if (xianResults.isNotEmpty) ...[
-                                _SectionHeader(label: '\u53bf'),
-                                ...xianResults.map((l) => _ResultCard(
-                                      location: l,
-                                      onTap: () => context
-                                          .go('/map?locationId=${l.id}'),
-                                    )),
-                              ],
-                            ],
+                    : filtered.isEmpty
+                        ? const Center(child: Text('未找到相关地名'))
+                        : ListView.builder(
+                            padding: const EdgeInsets.symmetric(vertical: 4),
+                            itemCount: filtered.length,
+                            itemBuilder: (context, index) {
+                              final loc = filtered[index];
+                              return _ResultCard(
+                                location: loc,
+                                onTap: () {
+                                  switch (loc.adminLevel) {
+                                    case AdminLevel.zhou:
+                                      context.go('/browse/jun?parentId=${loc.id}');
+                                    case AdminLevel.jun:
+                                      context.go('/browse/xian?parentId=${loc.id}');
+                                    case AdminLevel.xian:
+                                      context.go('/location/${loc.id}', extra: loc);
+                                  }
+                                },
+                              );
+                            },
                           ),
           ),
         ],
@@ -162,7 +230,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
           Icon(Icons.search, size: 64, color: AppColors.textHint.withValues(alpha: 0.5)),
           const SizedBox(height: 16),
           Text(
-            '\u8f93\u5165\u5173\u952e\u8bcd\u641c\u7d22\u53e4\u4ee3\u5730\u540d',
+            '输入关键词搜索古代地名',
             style: AppTypography.bodyMedium.copyWith(
               color: AppColors.textHint,
             ),
@@ -173,20 +241,40 @@ class _SearchPageState extends ConsumerState<SearchPage> {
   }
 }
 
-class _SectionHeader extends StatelessWidget {
+class _FilterChip extends StatelessWidget {
   final String label;
+  final bool selected;
+  final VoidCallback onTap;
 
-  const _SectionHeader({required this.label});
+  const _FilterChip({
+    required this.label,
+    required this.selected,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 16, 16, 4),
-      child: Text(
-        label,
-        style: AppTypography.labelLarge.copyWith(
-          color: AppColors.gold,
-          fontWeight: FontWeight.w700,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+        decoration: BoxDecoration(
+          color: selected
+              ? AppColors.primary.withValues(alpha: 0.1)
+              : Colors.transparent,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(
+            color: selected ? AppColors.primary : AppColors.textHint.withValues(alpha: 0.3),
+            width: 0.5,
+          ),
+        ),
+        child: Text(
+          label,
+          style: TextStyle(
+            fontSize: 12,
+            fontFamily: AppTypography.fontFamily,
+            color: selected ? AppColors.primary : AppColors.textHint,
+          ),
         ),
       ),
     );

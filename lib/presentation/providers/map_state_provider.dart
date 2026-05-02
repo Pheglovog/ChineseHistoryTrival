@@ -58,3 +58,6 @@ enum AdminLevelFilter { all, zhou, jun, xian }
 
 final adminLevelFilterProvider =
     StateProvider<AdminLevelFilter>((ref) => AdminLevelFilter.all);
+
+/// Toggle for showing modern name alongside ancient name on map markers
+final showModernNameProvider = StateProvider<bool>((ref) => false);

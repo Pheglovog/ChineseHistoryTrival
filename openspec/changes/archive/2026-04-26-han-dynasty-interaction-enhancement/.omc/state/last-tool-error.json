@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"openspec status --change \\\"han-dynasty-interaction-enhancement\\\" --json\",\"description\":\"Check artifact status\"}",
+  "error": "Exit code 1\n- Loading change status...\n\n✖ Error: Change 'han-dynasty-interaction-enhancement' not found. No changes exist. Create one with: openspec new change <name>",
+  "timestamp": "2026-04-25T18:01:42.864Z",
+  "retry_count": 1
+}

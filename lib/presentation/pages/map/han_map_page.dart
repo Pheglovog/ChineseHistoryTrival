@@ -4,6 +4,7 @@ import 'package:amap_map/amap_map.dart';
 import 'package:x_amap_base/x_amap_base.dart';
 
 import '../../../core/theme/app_colors.dart';
+import '../../../domain/entities/ancient_location.dart';
 import '../../providers/map_state_provider.dart';
 import '../../providers/visible_markers_provider.dart';
 import 'widgets/marker_factory.dart';
@@ -25,12 +26,30 @@ class _HanMapPageState extends ConsumerState<HanMapPage> {
   @override
   Widget build(BuildContext context) {
     final markersAsync = ref.watch(visibleMarkersProvider);
+    final showModernName = ref.watch(showModernNameProvider);
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('\u6c49\u4ee3\u5730\u56fe'),
         backgroundColor: AppColors.surface,
         foregroundColor: AppColors.textPrimary,
+        actions: [
+          // Toggle dual labels
+          IconButton(
+            icon: Icon(
+              showModernName
+                  ? Icons.label_important
+                  : Icons.label_outline,
+              color: showModernName ? AppColors.gold : AppColors.textHint,
+              size: 22,
+            ),
+            onPressed: () {
+              ref.read(showModernNameProvider.notifier).state =
+                  !showModernName;
+            },
+            tooltip: '古今对照',
+          ),
+        ],
       ),
       body: Stack(
         children: [
@@ -42,7 +61,9 @@ class _HanMapPageState extends ConsumerState<HanMapPage> {
             onMapCreated: _onMapCreated,
             onCameraMoveEnd: _onCameraMoveEnd,
             markers: markersAsync.when(
-              data: (locations) => _buildMarkers(locations).toSet(),
+              data: (locations) =>
+                  _buildMarkers(locations, showModernName: showModernName)
+                      .toSet(),
               loading: () => <Marker>{},
               error: (_, _) => <Marker>{},
             ),
@@ -80,16 +101,18 @@ class _HanMapPageState extends ConsumerState<HanMapPage> {
     );
   }
 
-  List<Marker> _buildMarkers(List<dynamic> locations) {
+  List<Marker> _buildMarkers(List<AncientLocation> locations,
+      {bool showModernName = false}) {
     return locations.map((loc) {
       return MarkerFactory.createMarker(
         location: loc,
+        showModernName: showModernName,
         onTap: () => _showLocationDetail(loc),
       );
     }).toList();
   }
 
-  void _showLocationDetail(dynamic location) {
+  void _showLocationDetail(AncientLocation location) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,

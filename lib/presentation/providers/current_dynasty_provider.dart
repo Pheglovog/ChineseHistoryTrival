@@ -11,3 +11,9 @@ final currentDynastyProvider = FutureProvider<Dynasty?>((ref) async {
   final dynasties = await dao.getAllDynasties();
   return dynasties.where((d) => d.id == dynastyId).firstOrNull;
 });
+
+final allDynastiesProvider = FutureProvider<List<Dynasty>>((ref) async {
+  final db = ref.watch(databaseProvider);
+  final dao = await db.dynastyDao;
+  return dao.getAllDynasties();
+});

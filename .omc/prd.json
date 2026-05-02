@@ -1,0 +1,50 @@
+{
+  "title": "Fix frontend-backend interaction issues",
+  "stories": [
+    {
+      "id": "US-001",
+      "title": "Fix critical and high severity bugs",
+      "description": "Fix Bug 3 (ignored adminLevel), Bug 4 (missing provider invalidation)",
+      "acceptanceCriteria": [
+        "locationCountsProvider: adminLevel parameter actually used for filtering",
+        "create_route_page.dart: ref.invalidate(routesByDynastyProvider) called after save",
+        "create_route_page.dart: uses Schema constants instead of raw strings"
+      ],
+      "passes": true
+    },
+    {
+      "id": "US-002",
+      "title": "Fix medium severity interaction bugs",
+      "description": "Fix Bug 6 (side effect in build), Bug 7 (router locationId not handled), Bug 8 (todayCard race condition)",
+      "acceptanceCriteria": [
+        "location_detail_page.dart: browse history recorded only once via initState",
+        "location_bottom_sheet.dart: browse history recorded only once via initState",
+        "location_detail_page.dart: useless ref.listen removed",
+        "Pages navigating to /map?locationId= fixed to use /map",
+        "todayCardProvider uses proper async dependency (await .future)"
+      ],
+      "passes": true
+    },
+    {
+      "id": "US-003",
+      "title": "Fix type safety and consistency issues",
+      "description": "Fix Bug 11 (dynamic types in marker pipeline), Bug 13 (dynamic in BrowseHistory)",
+      "acceptanceCriteria": [
+        "MarkerFactory uses AncientLocation instead of dynamic",
+        "LocationBottomSheet uses AncientLocation instead of dynamic",
+        "HanMapPage._buildMarkers uses List<AncientLocation> instead of List<dynamic>",
+        "BrowseHistoryPage._HistoryItem uses BrowseHistory instead of dynamic"
+      ],
+      "passes": true
+    },
+    {
+      "id": "US-004",
+      "title": "Verify all fixes compile and pass analysis",
+      "description": "Run flutter analyze to confirm zero issues after all fixes",
+      "acceptanceCriteria": [
+        "flutter analyze returns 'No issues found!' with zero errors and zero warnings"
+      ],
+      "passes": true
+    }
+  ]
+}

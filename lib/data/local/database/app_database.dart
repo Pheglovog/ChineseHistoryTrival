@@ -6,6 +6,12 @@ import '../daos/dynasty_dao.dart';
 import '../daos/ancient_location_dao.dart';
 import '../daos/modern_location_dao.dart';
 import '../daos/location_match_dao.dart';
+import '../daos/historical_figure_dao.dart';
+import '../daos/figure_location_relation_dao.dart';
+import '../daos/travel_route_dao.dart';
+import '../daos/history_card_dao.dart';
+import '../daos/user_favorite_dao.dart';
+import '../daos/browse_history_dao.dart';
 
 class AppDatabase {
   static Database? _database;
@@ -27,8 +33,43 @@ class AppDatabase {
         await db.execute(Schema.createAncientLocations);
         await db.execute(Schema.createModernLocations);
         await db.execute(Schema.createLocationMatches);
+        await db.execute(Schema.createHistoricalFigures);
+        await db.execute(Schema.createFigureLocationRelations);
+        await db.execute(Schema.createTravelRoutes);
+        await db.execute(Schema.createRouteStops);
+        await db.execute(Schema.createHistoryCards);
+        await db.execute(Schema.createUserFavorites);
+        await db.execute(Schema.createBrowseHistory);
         await db.execute(Schema.createIndexDynastyAdmin);
         await db.execute(Schema.createIndexLatLng);
+        await db.execute(Schema.createIndexFigureDynasty);
+        await db.execute(Schema.createIndexFigureLocRelation);
+        await db.execute(Schema.createIndexFigureLocRelationLoc);
+        await db.execute(Schema.createIndexRouteDynasty);
+        await db.execute(Schema.createIndexRouteStopRoute);
+        await db.execute(Schema.createIndexHistoryCardsDynasty);
+        await db.execute(Schema.createIndexUserFavoritesDynasty);
+        await db.execute(Schema.createIndexBrowseHistoryTime);
+      },
+      onUpgrade: (db, oldVersion, newVersion) async {
+        if (oldVersion < 2) {
+          // V2: add new tables for figures, routes, cards, favorites, history
+          await db.execute(Schema.createHistoricalFigures);
+          await db.execute(Schema.createFigureLocationRelations);
+          await db.execute(Schema.createTravelRoutes);
+          await db.execute(Schema.createRouteStops);
+          await db.execute(Schema.createHistoryCards);
+          await db.execute(Schema.createUserFavorites);
+          await db.execute(Schema.createBrowseHistory);
+          await db.execute(Schema.createIndexFigureDynasty);
+          await db.execute(Schema.createIndexFigureLocRelation);
+          await db.execute(Schema.createIndexFigureLocRelationLoc);
+          await db.execute(Schema.createIndexRouteDynasty);
+          await db.execute(Schema.createIndexRouteStopRoute);
+          await db.execute(Schema.createIndexHistoryCardsDynasty);
+          await db.execute(Schema.createIndexUserFavoritesDynasty);
+          await db.execute(Schema.createIndexBrowseHistoryTime);
+        }
       },
     );
   }
@@ -38,6 +79,12 @@ class AppDatabase {
   AncientLocationDao? _ancientLocationDao;
   ModernLocationDao? _modernLocationDao;
   LocationMatchDao? _locationMatchDao;
+  HistoricalFigureDao? _historicalFigureDao;
+  FigureLocationRelationDao? _figureLocationRelationDao;
+  TravelRouteDao? _travelRouteDao;
+  HistoryCardDao? _historyCardDao;
+  UserFavoriteDao? _userFavoriteDao;
+  BrowseHistoryDao? _browseHistoryDao;
 
   Future<DynastyDao> get dynastyDao async {
     _dynastyDao ??= DynastyDao(await database);
@@ -57,5 +104,35 @@ class AppDatabase {
   Future<LocationMatchDao> get locationMatchDao async {
     _locationMatchDao ??= LocationMatchDao(await database);
     return _locationMatchDao!;
+  }
+
+  Future<HistoricalFigureDao> get historicalFigureDao async {
+    _historicalFigureDao ??= HistoricalFigureDao(await database);
+    return _historicalFigureDao!;
+  }
+
+  Future<FigureLocationRelationDao> get figureLocationRelationDao async {
+    _figureLocationRelationDao ??= FigureLocationRelationDao(await database);
+    return _figureLocationRelationDao!;
+  }
+
+  Future<TravelRouteDao> get travelRouteDao async {
+    _travelRouteDao ??= TravelRouteDao(await database);
+    return _travelRouteDao!;
+  }
+
+  Future<HistoryCardDao> get historyCardDao async {
+    _historyCardDao ??= HistoryCardDao(await database);
+    return _historyCardDao!;
+  }
+
+  Future<UserFavoriteDao> get userFavoriteDao async {
+    _userFavoriteDao ??= UserFavoriteDao(await database);
+    return _userFavoriteDao!;
+  }
+
+  Future<BrowseHistoryDao> get browseHistoryDao async {
+    _browseHistoryDao ??= BrowseHistoryDao(await database);
+    return _browseHistoryDao!;
   }
 }

@@ -1,0 +1,447 @@
+{
+  "figures": [
+    {
+      "name": "刘邦",
+      "alias": "汉高祖",
+      "title": "皇帝",
+      "birthYear": -256,
+      "deathYear": -195,
+      "category": "emperor",
+      "description": "汉朝开国皇帝",
+      "biography": "刘邦，字季，沛县人，出身平民，曾任泗水亭长。秦末乱世中起兵反秦，先后击败秦军与项羽，于公元前202年建立汉朝，定都长安。他知人善任，宽厚大度，开创了中国历史上平民天子治天下的先河。",
+      "locationRelations": [
+        { "locationName": "沛", "relationType": "born", "description": "出生于沛县" },
+        { "locationName": "长安", "relationType": "ruled", "description": "定都长安，建立西汉" },
+        { "locationName": "南郑", "relationType": "ruled", "description": "受封汉王，都南郑" },
+        { "locationName": "彭城", "relationType": "battle", "description": "彭城之战惨败于项羽" }
+      ]
+    },
+    {
+      "name": "刘彻",
+      "alias": "汉武帝",
+      "title": "皇帝",
+      "birthYear": -156,
+      "deathYear": -87,
+      "category": "emperor",
+      "description": "西汉最具雄才大略的皇帝",
+      "biography": "刘彻，汉景帝之子，十六岁即位，在位五十四年。他内兴礼乐，外攘夷狄，派卫青、霍去病北击匈奴，遣张骞通西域，独尊儒术，奠定了汉朝鼎盛基业。晚年颁下罪己诏，反思穷兵黩武之过。",
+      "locationRelations": [
+        { "locationName": "长安", "relationType": "ruled", "description": "在长安执政五十四年" },
+        { "locationName": "陇西郡", "relationType": "battle", "description": "经略陇西，出击匈奴" },
+        { "locationName": "敦煌", "relationType": "other", "description": "设敦煌郡，经营西域通道" }
+      ]
+    },
+    {
+      "name": "刘询",
+      "alias": "汉宣帝",
+      "title": "皇帝",
+      "birthYear": -91,
+      "deathYear": -49,
+      "category": "emperor",
+      "description": "西汉中兴之主",
+      "biography": "刘询，史称汉宣帝，幼年流落民间，深知百姓疾苦。即位后励精图治，整顿吏治，降服匈奴，设西域都护府。他在位期间政治清明，国力极盛，被视为西汉最好的皇帝之一。",
+      "locationRelations": [
+        { "locationName": "长安", "relationType": "ruled", "description": "宣帝在长安治理天下" },
+        { "locationName": "洛阳", "relationType": "other", "description": "幼年曾在洛阳一带流落" },
+        { "locationName": "敦煌", "relationType": "other", "description": "宣帝时设西域都护府" }
+      ]
+    },
+    {
+      "name": "刘秀",
+      "alias": "光武帝",
+      "title": "皇帝",
+      "birthYear": -5,
+      "deathYear": 57,
+      "category": "emperor",
+      "description": "东汉开国皇帝",
+      "biography": "刘秀，南阳蔡阳人，汉高祖九世孙。王莽篡汉后起兵反抗，以柔道治天下，历经昆阳之战等决定性战役，统一全国，定都洛阳，建立东汉。他勤政爱民，与民休息，开创了光武中兴的局面。",
+      "locationRelations": [
+        { "locationName": "宛", "relationType": "born", "description": "出生于南阳郡蔡阳" },
+        { "locationName": "洛阳", "relationType": "ruled", "description": "定都洛阳，建立东汉" },
+        { "locationName": "长安", "relationType": "battle", "description": "曾攻入长安，推翻更始帝" }
+      ]
+    },
+    {
+      "name": "刘协",
+      "alias": "汉献帝",
+      "title": "皇帝",
+      "birthYear": 181,
+      "deathYear": 234,
+      "category": "emperor",
+      "description": "东汉末代皇帝",
+      "biography": "刘协，汉灵帝之子，九岁即位，一生先后被董卓、曹操挟持，形同傀儡。建安二十五年被迫禅位给曹丕，东汉灭亡。他在位三十一年，虽无力回天，却亲眼见证了汉帝国最后的黄昏。",
+      "locationRelations": [
+        { "locationName": "洛阳", "relationType": "born", "description": "出生于洛阳皇宫" },
+        { "locationName": "长安", "relationType": "other", "description": "被董卓挟持迁都长安" },
+        { "locationName": "许", "relationType": "ruled", "description": "被曹操迎至许都，形同傀儡" }
+      ]
+    },
+    {
+      "name": "萧何",
+      "alias": "酂侯",
+      "title": "丞相",
+      "birthYear": -257,
+      "deathYear": -193,
+      "category": "minister",
+      "description": "汉初三杰之一，开国第一功臣",
+      "biography": "萧何，沛县人，与刘邦同乡，早年为沛县吏。辅佐刘邦起义，入关中后收取秦朝律令图书，为汉朝制度建设奠定基础。楚汉相争时留守关中，保障前方粮草供应，被刘邦评为功臣第一。",
+      "locationRelations": [
+        { "locationName": "沛", "relationType": "born", "description": "萧何为沛县人" },
+        { "locationName": "长安", "relationType": "ruled", "description": "辅佐刘邦定都长安，制定汉律" },
+        { "locationName": "长安", "relationType": "other", "description": "入关中后收秦朝律令图书" }
+      ]
+    },
+    {
+      "name": "张良",
+      "alias": "留侯",
+      "title": "谋士",
+      "birthYear": -250,
+      "deathYear": -186,
+      "category": "minister",
+      "description": "汉初三杰之一，运筹帷幄的谋圣",
+      "biography": "张良，字子房，韩国贵族后裔，祖父和父亲曾任韩国丞相。秦灭韩后，张良图谋复仇，曾在博浪沙刺杀秦始皇未遂。后辅佐刘邦，运筹帷幄，屡出奇策，助刘邦夺取天下，被封为留侯。",
+      "locationRelations": [
+        { "locationName": "长安", "relationType": "other", "description": "随刘邦入关中" },
+        { "locationName": "彭城", "relationType": "battle", "description": "辅佐刘邦在彭城一带与项羽周旋" },
+        { "locationName": "洛阳", "relationType": "other", "description": "封留侯后隐居" }
+      ]
+    },
+    {
+      "name": "陈平",
+      "alias": "曲逆侯",
+      "title": "丞相",
+      "birthYear": -230,
+      "deathYear": -178,
+      "category": "minister",
+      "description": "六出奇计的汉初名臣",
+      "biography": "陈平，阳武人，少时家贫，好读书。先从项羽，后归刘邦，屡出奇计，尤以离间项羽和范增最为著名。惠帝、吕后时期历任要职，与周勃联手诛除诸吕，迎立文帝， stabilizing 汉室江山。",
+      "locationRelations": [
+        { "locationName": "长安", "relationType": "ruled", "description": "在长安历任要职，官至丞相" },
+        { "locationName": "彭城", "relationType": "other", "description": "初随项羽在彭城" }
+      ]
+    },
+    {
+      "name": "曹参",
+      "alias": "平阳侯",
+      "title": "丞相",
+      "birthYear": -240,
+      "deathYear": -190,
+      "category": "minister",
+      "description": "萧规曹随的贤相",
+      "biography": "曹参，沛县人，与刘邦同乡，早年为沛县狱吏。随刘邦起兵，战功累累。萧何死后继任丞相，一切遵照萧何旧制，无为而治，天下太平，留下\"萧规曹随\"的佳话。",
+      "locationRelations": [
+        { "locationName": "沛", "relationType": "born", "description": "曹参为沛县人" },
+        { "locationName": "长安", "relationType": "ruled", "description": "在长安任丞相" },
+        { "locationName": "齐郡", "relationType": "ruled", "description": "曾任齐相，治理齐国九年" }
+      ]
+    },
+    {
+      "name": "霍光",
+      "alias": "博陆侯",
+      "title": "大将军",
+      "birthYear": -130,
+      "deathYear": -68,
+      "category": "minister",
+      "description": "武帝托孤重臣，废立皇帝的权臣",
+      "biography": "霍光，霍去病同父异母弟，受汉武帝遗诏辅佐幼主昭帝。昭帝去世后，先后迎立昌邑王刘贺与宣帝刘询，执掌朝政近二十年。他在位时轻徭薄赋，与民休息，使西汉国力得以恢复。",
+      "locationRelations": [
+        { "locationName": "长安", "relationType": "ruled", "description": "在长安执掌朝政二十年" },
+        { "locationName": "洛阳", "relationType": "other", "description": "家族势力延伸至洛阳" }
+      ]
+    },
+    {
+      "name": "董仲舒",
+      "alias": "董子",
+      "title": "大儒",
+      "birthYear": -179,
+      "deathYear": -104,
+      "category": "minister",
+      "description": "罢黜百家、独尊儒术的倡导者",
+      "biography": "董仲舒，广川人，西汉大儒，专治《春秋公羊传》。他向汉武帝提出\"罢黜百家，独尊儒术\"的建议被采纳，使儒学成为中国两千年的正统思想。其\"天人三策\"深刻影响了汉代政治哲学。",
+      "locationRelations": [
+        { "locationName": "长安", "relationType": "other", "description": "在长安向武帝献天人三策" },
+        { "locationName": "广陵郡", "relationType": "ruled", "description": "曾任江都相" }
+      ]
+    },
+    {
+      "name": "诸葛亮",
+      "alias": "卧龙",
+      "title": "丞相",
+      "birthYear": 181,
+      "deathYear": 234,
+      "category": "minister",
+      "description": "鞠躬尽瘁的蜀汉丞相",
+      "biography": "诸葛亮，字孔明，琅邪阳都人，东汉末年杰出的政治家、军事家。刘备三顾茅庐请其出山，他辅佐刘备建立蜀汉政权，刘备去世后受托孤重任，六出祁山北伐曹魏，最终病逝于五丈原。",
+      "locationRelations": [
+        { "locationName": "琅邪", "relationType": "born", "description": "出生于琅邪阳都" },
+        { "locationName": "成都", "relationType": "ruled", "description": "在成都辅佐刘禅治理蜀汉" },
+        { "locationName": "南阳郡", "relationType": "other", "description": "曾隐居南阳隆中" }
+      ]
+    },
+    {
+      "name": "韩信",
+      "alias": "淮阴侯",
+      "title": "大将军",
+      "birthYear": -231,
+      "deathYear": -196,
+      "category": "general",
+      "description": "汉初三杰之一，战无不胜的兵仙",
+      "biography": "韩信，淮阴人，初投项羽不被重用，后归刘邦，经萧何力荐拜为大将军。他先后平定魏、赵、燕、齐，垓下之战围歼项羽，为汉朝建立立下不世之功。后被吕后与萧何设计杀害，留下了\"成也萧何，败也萧何\"的典故。",
+      "locationRelations": [
+        { "locationName": "长安", "relationType": "other", "description": "入关中被封为齐王，后徙为楚王" },
+        { "locationName": "彭城", "relationType": "battle", "description": "被封楚王，都下邳" },
+        { "locationName": "临淄", "relationType": "battle", "description": "平定齐国，被封齐王" }
+      ]
+    },
+    {
+      "name": "卫青",
+      "alias": "长平侯",
+      "title": "大将军",
+      "birthYear": -140,
+      "deathYear": -106,
+      "category": "general",
+      "description": "北击匈奴的西汉名将",
+      "biography": "卫青，河东平阳人，出身低微，因姐姐卫子夫受武帝宠幸而入仕。他七次出击匈奴，收复河套地区，漠北之战大破匈奴主力，封长平侯。他是中国历史上首次大规模击败游牧民族的名将。",
+      "locationRelations": [
+        { "locationName": "云中郡", "relationType": "battle", "description": "自云中出击匈奴，收复河套" },
+        { "locationName": "长安", "relationType": "other", "description": "在长安受封大将军" },
+        { "locationName": "雁门郡", "relationType": "battle", "description": "多次从雁门出击匈奴" }
+      ]
+    },
+    {
+      "name": "霍去病",
+      "alias": "冠军侯",
+      "title": "骠骑将军",
+      "birthYear": -140,
+      "deathYear": -117,
+      "category": "general",
+      "description": "封狼居胥的少年英雄",
+      "biography": "霍去病，卫青外甥，十七岁随军出征，二十四岁英年早逝。他六次出击匈奴，战功赫赫，尤其漠北之战封狼居胥山，成为历代武将的最高荣誉。武帝为其修建祁连山形墓，以纪念其不朽功勋。",
+      "locationRelations": [
+        { "locationName": "长安", "relationType": "other", "description": "在长安受封冠军侯" },
+        { "locationName": "武威郡", "relationType": "battle", "description": "击匈奴后设武威郡" },
+        { "locationName": "酒泉郡", "relationType": "battle", "description": "传说倾酒入泉得名酒泉" }
+      ]
+    },
+    {
+      "name": "李广",
+      "alias": "飞将军",
+      "title": "将军",
+      "birthYear": -184,
+      "deathYear": -119,
+      "category": "general",
+      "description": "匈奴畏惧的飞将军",
+      "biography": "李广，陇西成纪人，世代将门，善于骑射。一生与匈奴作战七十余次，匈奴人闻风丧胆，称其为\"飞将军\"。然而终其一生未能封侯，留下\"李广难封\"的千古憾事。最后一次随卫青出征时迷失道路，悲愤自刎。",
+      "locationRelations": [
+        { "locationName": "陇西郡", "relationType": "born", "description": "出生于陇西成纪将门世家" },
+        { "locationName": "雁门郡", "relationType": "battle", "description": "曾任雁门太守，抗击匈奴" },
+        { "locationName": "代郡", "relationType": "battle", "description": "在代郡一带与匈奴作战" }
+      ]
+    },
+    {
+      "name": "周亚夫",
+      "alias": "条侯",
+      "title": "太尉",
+      "birthYear": -199,
+      "deathYear": -143,
+      "category": "general",
+      "description": "治军严明的西汉名将",
+      "biography": "周亚夫，沛县人，周勃之子。驻军细柳时以治军严明闻名，汉文帝亲往劳军亦须按军规通报。景帝时七国之乱爆发，他率军平叛，仅用三个月便击溃吴楚联军。后因直言触怒景帝，绝食死于狱中。",
+      "locationRelations": [
+        { "locationName": "沛", "relationType": "born", "description": "周亚夫为沛县人" },
+        { "locationName": "长安", "relationType": "other", "description": "在长安驻军细柳营" },
+        { "locationName": "彭城", "relationType": "battle", "description": "平七国之乱，击败吴楚联军" }
+      ]
+    },
+    {
+      "name": "班超",
+      "alias": "定远侯",
+      "title": "西域都护",
+      "birthYear": 32,
+      "deathYear": 102,
+      "category": "general",
+      "description": "投笔从戎、经营西域三十年",
+      "biography": "班超，扶风平陵人，班固之弟。早年为人抄写文书，后投笔从戎，出使西域三十年，以\"不入虎穴，焉得虎子\"的胆略平定西域五十余国，重新打通丝绸之路。封定远侯，是中国历史上最杰出的外交家之一。",
+      "locationRelations": [
+        { "locationName": "长安", "relationType": "other", "description": "出身关中扶风平陵" },
+        { "locationName": "敦煌", "relationType": "traveled", "description": "经敦煌出使西域" },
+        { "locationName": "洛阳", "relationType": "died", "description": "晚年回到洛阳，同年去世" }
+      ]
+    },
+    {
+      "name": "赵充国",
+      "alias": "营平侯",
+      "title": "后将军",
+      "birthYear": -137,
+      "deathYear": -52,
+      "category": "general",
+      "description": "老成谋国的西汉名将",
+      "biography": "赵充国，陇西上邽人，善骑射，有谋略。宣帝时率军平定西羌叛乱，提出\"屯田戍边\"之策，以最小的军事代价稳定了西北边疆。他前后上书十余次论述屯田之利，其战略思想对后世影响深远。",
+      "locationRelations": [
+        { "locationName": "天水郡", "relationType": "born", "description": "出生于陇西上邽" },
+        { "locationName": "陇西郡", "relationType": "battle", "description": "在陇西一带平定羌乱" },
+        { "locationName": "长安", "relationType": "other", "description": "在长安上书论屯田之策" }
+      ]
+    },
+    {
+      "name": "司马迁",
+      "alias": "太史公",
+      "title": "太史令",
+      "birthYear": -145,
+      "deathYear": -86,
+      "category": "scholar",
+      "description": "《史记》作者，中国史学之父",
+      "biography": "司马迁，夏阳人，太史令司马谈之子。继任太史令后因替李陵辩护而受宫刑，忍辱发愤著成《史记》，记载了上起黄帝下至汉武帝三千余年历史，开创了纪传体通史的先河，被鲁迅誉为\"史家之绝唱，无韵之离骚\"。",
+      "locationRelations": [
+        { "locationName": "长安", "relationType": "other", "description": "在长安任太史令并著《史记》" },
+        { "locationName": "洛阳", "relationType": "traveled", "description": "曾游历洛阳等天下名都" },
+        { "locationName": "会稽", "relationType": "traveled", "description": "青年时漫游天下，曾到会稽" }
+      ]
+    },
+    {
+      "name": "张衡",
+      "alias": "张平子",
+      "title": "太史令",
+      "birthYear": 78,
+      "deathYear": 139,
+      "category": "scholar",
+      "description": "发明地动仪的东汉科学巨匠",
+      "biography": "张衡，南阳西鄂人，东汉杰出的天文学家、数学家、发明家。他发明了世界上最早的地动仪和浑天仪，著有《灵宪》《二京赋》等重要作品，在天文学、地震学等领域做出了开创性贡献。",
+      "locationRelations": [
+        { "locationName": "宛", "relationType": "born", "description": "出生于南阳郡西鄂" },
+        { "locationName": "洛阳", "relationType": "other", "description": "在洛阳任太史令，发明地动仪" },
+        { "locationName": "长安", "relationType": "traveled", "description": "曾游历长安，作《二京赋》" }
+      ]
+    },
+    {
+      "name": "蔡伦",
+      "alias": "龙亭侯",
+      "title": "尚方令",
+      "birthYear": 61,
+      "deathYear": 121,
+      "category": "scholar",
+      "description": "改进造纸术的伟大发明家",
+      "biography": "蔡伦，桂阳人，东汉宦官，官至尚方令。他改进了造纸工艺，以树皮、麻头、破布、旧渔网等为原料制造出质地优良的\"蔡侯纸\"，大大降低了造纸成本，推动了人类文明的传播，被视为中国古代四大发明之一。",
+      "locationRelations": [
+        { "locationName": "桂阳郡", "relationType": "born", "description": "出生于桂阳郡" },
+        { "locationName": "洛阳", "relationType": "other", "description": "在洛阳改进造纸术" }
+      ]
+    },
+    {
+      "name": "张仲景",
+      "alias": "医圣",
+      "title": "太守",
+      "birthYear": 150,
+      "deathYear": 219,
+      "category": "scholar",
+      "description": "《伤寒杂病论》作者，中医之圣",
+      "biography": "张仲景，南阳涅阳人，东汉末年著名医学家。他广泛收集医方，结合自身临床经验，写成《伤寒杂病论》一书，确立了辨证论治的医学原则，被后世尊称为\"医圣\"，其著作至今仍是中医学的重要经典。",
+      "locationRelations": [
+        { "locationName": "宛", "relationType": "born", "description": "出生于南阳涅阳" },
+        { "locationName": "长沙", "relationType": "ruled", "description": "曾任长沙太守" }
+      ]
+    },
+    {
+      "name": "华佗",
+      "alias": "神医",
+      "title": "医者",
+      "birthYear": 145,
+      "deathYear": 208,
+      "category": "scholar",
+      "description": "发明麻沸散的外科圣手",
+      "biography": "华佗，沛国谯人，东汉末年杰出医学家。他精通内、外、妇、儿各科，发明了麻醉药物\"麻沸散\"，是世界医学史上最早使用全身麻醉的医生。他创编的\"五禽戏\"至今仍是广受欢迎的健身功法。后因不愿专事曹操而被杀害。",
+      "locationRelations": [
+        { "locationName": "沛", "relationType": "born", "description": "出生于沛国谯县" },
+        { "locationName": "许", "relationType": "died", "description": "在许都因拒绝专为曹操治病而被杀" },
+        { "locationName": "彭城", "relationType": "traveled", "description": "行医游历彭城一带" }
+      ]
+    },
+    {
+      "name": "班固",
+      "alias": "班孟坚",
+      "title": "兰台令史",
+      "birthYear": 32,
+      "deathYear": 92,
+      "category": "scholar",
+      "description": "《汉书》作者，断代史开创者",
+      "biography": "班固，扶风安陵人，东汉著名史学家、文学家。他继承父业，历时二十余年著成《汉书》，开创了纪传体断代史的先河。此外还著有《两都赋》等名篇，是汉赋四大家之一。后因窦宪案牵连死于狱中。",
+      "locationRelations": [
+        { "locationName": "长安", "relationType": "born", "description": "出生于扶风安陵，属右扶风" },
+        { "locationName": "洛阳", "relationType": "other", "description": "在洛阳任兰台令史，著《汉书》" }
+      ]
+    },
+    {
+      "name": "张骞",
+      "alias": "博望侯",
+      "title": "中郎将",
+      "birthYear": -164,
+      "deathYear": -114,
+      "category": "other",
+      "description": "凿空西域的伟大探险家",
+      "biography": "张骞，汉中成固人，中国历史上最伟大的探险家之一。他两次出使西域，虽被匈奴扣留十余年仍不辱使命，最终带回大量西域信息，打通了丝绸之路，被汉武帝封为博望侯。司马迁称其出使为\"凿空\"之举。",
+      "locationRelations": [
+        { "locationName": "南郑", "relationType": "born", "description": "出生于汉中成固" },
+        { "locationName": "长安", "relationType": "other", "description": "从长安出发出使西域" },
+        { "locationName": "敦煌", "relationType": "traveled", "description": "经敦煌出使西域" },
+        { "locationName": "陇西郡", "relationType": "traveled", "description": "经陇西出使西域" }
+      ]
+    },
+    {
+      "name": "苏武",
+      "alias": "苏子卿",
+      "title": "典属国",
+      "birthYear": -140,
+      "deathYear": -60,
+      "category": "other",
+      "description": "牧羊北海十九年，忠节不屈",
+      "biography": "苏武，杜陵人，奉命出使匈奴被扣留。匈奴单于百般威逼利诱，苏武始终不屈，被流放至北海（今贝加尔湖）牧羊十九年。他手持汉朝节杖，节旄尽落而信念不改，最终归汉，成为中国历史上忠贞不屈的象征。",
+      "locationRelations": [
+        { "locationName": "长安", "relationType": "other", "description": "从长安出发出使匈奴" },
+        { "locationName": "长安", "relationType": "died", "description": "归汉后在长安去世" }
+      ]
+    },
+    {
+      "name": "司马相如",
+      "alias": "司马长卿",
+      "title": "孝文园令",
+      "birthYear": -179,
+      "deathYear": -118,
+      "category": "other",
+      "description": "汉赋大家，琴挑卓文君的风流才子",
+      "biography": "司马相如，蜀郡成都人，西汉最著名的辞赋家。其代表作《子虚赋》《上林赋》以恢弘气势著称，代表了汉赋的最高成就。他与卓文君的爱情故事——琴挑私奔、当垆卖酒，也是中国文学史上最浪漫的佳话之一。",
+      "locationRelations": [
+        { "locationName": "成都", "relationType": "born", "description": "出生于蜀郡成都" },
+        { "locationName": "长安", "relationType": "other", "description": "在长安献《上林赋》于武帝" },
+        { "locationName": "临淄", "relationType": "traveled", "description": "《子虚赋》以齐国为背景" }
+      ]
+    },
+    {
+      "name": "窦太后",
+      "alias": "窦漪房",
+      "title": "太后",
+      "birthYear": -205,
+      "deathYear": -135,
+      "category": "other",
+      "description": "历经三朝的西汉女政治家",
+      "biography": "窦太后，清河郡观津人，汉文帝皇后。她崇尚黄老之学，在文帝、景帝、武帝三朝具有巨大政治影响力，推动汉初\"无为而治\"的政策，使得社会经济得以恢复和发展。她双目失明却左右朝局数十年，是中国历史上最有影响力的女性之一。",
+      "locationRelations": [
+        { "locationName": "长安", "relationType": "ruled", "description": "在长安以太后身份影响三朝政治" },
+        { "locationName": "洛阳", "relationType": "other", "description": "早年入宫于代国" }
+      ]
+    },
+    {
+      "name": "王莽",
+      "alias": "新帝",
+      "title": "皇帝",
+      "birthYear": -45,
+      "deathYear": 23,
+      "category": "emperor",
+      "description": "篡汉自立的新朝建立者",
+      "biography": "王莽，魏郡元城人，汉元帝皇后王政君之侄。以外戚身份逐步掌握朝政大权，公元8年代汉建立新朝。他推行复古改制，包括土地国有、废除奴隶制等政策，但因脱离实际而引发天下大乱，最终被绿林军杀死，新朝仅存十五年。",
+      "locationRelations": [
+        { "locationName": "长安", "relationType": "ruled", "description": "在长安篡汉建立新朝" },
+        { "locationName": "洛阳", "relationType": "other", "description": "新朝末年天下大乱" }
+      ]
+    }
+  ]
+}

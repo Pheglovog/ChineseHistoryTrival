@@ -32,6 +32,18 @@ dependencies:
   # Local storage
   shared_preferences: ^2.3.0
 
+  # Notifications
+  flutter_local_notifications: ^18.0.1
+
+  # Sharing
+  share_plus: ^10.1.4
+
+  # File system
+  path_provider: ^2.1.0
+
+  # Timezone
+  timezone: ^0.9.4
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

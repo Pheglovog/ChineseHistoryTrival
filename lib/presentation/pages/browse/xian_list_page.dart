@@ -71,7 +71,7 @@ class _XianListPageState extends ConsumerState<XianListPage> {
                         final xian = _xianList[index];
                         return ClassicalCard(
                           onTap: () =>
-                              context.go('/map?locationId=${xian.id}'),
+                              context.go('/map'),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [

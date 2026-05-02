@@ -1,0 +1,1170 @@
+{
+  "seedVersion": 1,
+  "dynasty": {
+    "name": "宋朝",
+    "nameEn": "Song Dynasty",
+    "startYear": 960,
+    "endYear": 1279,
+    "subPeriod": "北宋/南宋",
+    "description": "中国经济文化高度发达的朝代，科技发明众多，文人政治鼎盛，分为北宋与南宋两个时期"
+  },
+  "locations": [
+    {
+      "name": "开封府",
+      "alias": "东京、汴梁",
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "北宋都城，天下首府",
+      "yearEstablished": 960,
+      "historicalSignificance": "北宋国都，人口逾百万，清明上河图所绘之城",
+      "modernMatch": {
+        "name": "开封市",
+        "province": "河南省",
+        "latitude": 34.80,
+        "longitude": 114.30,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "祥符县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "开封府附郭县，京城所在",
+          "historicalSignificance": "北宋政治中心，包拯曾任开封府尹",
+          "modernMatch": {
+            "name": "开封市祥符区",
+            "province": "河南省",
+            "latitude": 34.76,
+            "longitude": 114.44,
+            "matchType": "exact",
+            "confidence": 1.0
+          },
+          "children": [
+            {
+              "name": "汴京",
+              "alias": "东京城",
+              "adminLevel": "xian",
+              "description": "北宋国都，当时世界最大城市之一",
+              "yearEstablished": 960,
+              "historicalSignificance": "张择端清明上河图描绘之地，百万人口大都市",
+              "modernMatch": {
+                "name": "开封市龙亭区",
+                "province": "河南省",
+                "latitude": 34.80,
+                "longitude": 114.35,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "河南府",
+      "alias": "西京、洛阳",
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "北宋西京，历史文化名城",
+      "historicalSignificance": "北宋陪都，司马光在此编纂资治通鉴",
+      "modernMatch": {
+        "name": "洛阳市",
+        "province": "河南省",
+        "latitude": 34.62,
+        "longitude": 112.45,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "洛阳县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "河南府附郭县",
+          "historicalSignificance": "北宋西京所在，文化名城",
+          "modernMatch": {
+            "name": "洛阳市老城区",
+            "province": "河南省",
+            "latitude": 34.68,
+            "longitude": 112.47,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "洛阳城",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "西京洛阳，牡丹花都",
+              "historicalSignificance": "司马光居洛阳十五年，完成资治通鉴",
+              "modernMatch": {
+                "name": "洛阳市西工区",
+                "province": "河南省",
+                "latitude": 34.67,
+                "longitude": 112.44,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "应天府",
+      "alias": "南京",
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "北宋南京，赵匡胤龙兴之地",
+      "historicalSignificance": "宋太祖赵匡胤曾任归德军节度使于此，后以此地为南京",
+      "modernMatch": {
+        "name": "商丘市",
+        "province": "河南省",
+        "latitude": 34.41,
+        "longitude": 115.65,
+        "matchType": "exact",
+        "confidence": 0.95
+      },
+      "children": [
+        {
+          "name": "宋城县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "应天府附郭县",
+          "historicalSignificance": "北宋南京所在，赵匡胤发迹之地",
+          "modernMatch": {
+            "name": "商丘市睢阳区",
+            "province": "河南省",
+            "latitude": 34.38,
+            "longitude": 115.65,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "大名府",
+      "alias": "北京",
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "北宋北京，北方军事重镇",
+      "historicalSignificance": "宋仁宗升大名府为北京，抵御辽国的北方重镇",
+      "modernMatch": {
+        "name": "大名县",
+        "province": "河北省",
+        "latitude": 36.30,
+        "longitude": 115.15,
+        "matchType": "exact",
+        "confidence": 0.95
+      },
+      "children": [
+        {
+          "name": "元城县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "大名府附郭县",
+          "historicalSignificance": "北宋北京所在，北方军事前哨",
+          "modernMatch": {
+            "name": "大名县",
+            "province": "河北省",
+            "latitude": 36.30,
+            "longitude": 115.15,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "临安府",
+      "alias": "杭州、行在",
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "南宋都城，偏安江南之所",
+      "yearEstablished": 1138,
+      "historicalSignificance": "宋高宗南渡后定都于此，南宋政治文化中心",
+      "modernMatch": {
+        "name": "杭州市",
+        "province": "浙江省",
+        "latitude": 30.27,
+        "longitude": 120.15,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "钱塘县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "临安府附郭县，南宋皇城所在",
+          "historicalSignificance": "南宋皇城凤凰山所在，西湖文化繁盛",
+          "modernMatch": {
+            "name": "杭州市上城区",
+            "province": "浙江省",
+            "latitude": 30.24,
+            "longitude": 120.17,
+            "matchType": "exact",
+            "confidence": 1.0
+          },
+          "children": [
+            {
+              "name": "临安城",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "南宋国都，西湖畔的繁华都市",
+              "yearEstablished": 1138,
+              "historicalSignificance": "南宋偏安一百五十余年之都城，马可波罗称之为世界最华贵之城",
+              "modernMatch": {
+                "name": "杭州市上城区",
+                "province": "浙江省",
+                "latitude": 30.24,
+                "longitude": 120.17,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "仁和县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "临安府附郭县之一",
+          "modernMatch": {
+            "name": "杭州市拱墅区",
+            "province": "浙江省",
+            "latitude": 30.32,
+            "longitude": 120.14,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "平江府",
+      "alias": "苏州",
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "江南繁华之地，上有天堂下有苏杭",
+      "historicalSignificance": "南宋经济最发达地区之一，范仲淹创立范氏义庄于此",
+      "modernMatch": {
+        "name": "苏州市",
+        "province": "江苏省",
+        "latitude": 31.30,
+        "longitude": 120.62,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "吴县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "平江府附郭县",
+          "historicalSignificance": "宋代江南经济文化重镇，丝绸之府",
+          "modernMatch": {
+            "name": "苏州市姑苏区",
+            "province": "江苏省",
+            "latitude": 31.30,
+            "longitude": 120.62,
+            "matchType": "exact",
+            "confidence": 1.0
+          },
+          "children": [
+            {
+              "name": "苏州城",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "平江府治所，江南水乡典范",
+              "historicalSignificance": "宋平江图碑所绘之城，城市规划史上的杰作",
+              "modernMatch": {
+                "name": "苏州市姑苏区",
+                "province": "江苏省",
+                "latitude": 31.30,
+                "longitude": 120.62,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "泉州",
+      "alias": "刺桐城",
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "宋代第一大港口，海上丝路起点",
+      "historicalSignificance": "南宋最大对外贸易港口，与亚历山大港并称世界两大港口",
+      "modernMatch": {
+        "name": "泉州市",
+        "province": "福建省",
+        "latitude": 24.87,
+        "longitude": 118.68,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "晋江县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "泉州附郭县",
+          "historicalSignificance": "宋元时期东方第一大港，阿拉伯商人称之为刺桐城",
+          "modernMatch": {
+            "name": "泉州市鲤城区",
+            "province": "福建省",
+            "latitude": 24.91,
+            "longitude": 118.59,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "泉州城",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "宋代东方第一大港",
+              "historicalSignificance": "市舶司所在，海上丝绸之路起点，蕃商云集",
+              "modernMatch": {
+                "name": "泉州市丰泽区",
+                "province": "福建省",
+                "latitude": 24.91,
+                "longitude": 118.61,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "成都府",
+      "alias": "益州",
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "天府之国，蜀地核心",
+      "historicalSignificance": "宋代最早的纸币交子诞生于此，经济高度发达",
+      "modernMatch": {
+        "name": "成都市",
+        "province": "四川省",
+        "latitude": 30.57,
+        "longitude": 104.07,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "成都县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "成都府附郭县",
+          "historicalSignificance": "世界最早纸币交子发源地，蜀锦织造中心",
+          "modernMatch": {
+            "name": "成都市锦江区",
+            "province": "四川省",
+            "latitude": 30.57,
+            "longitude": 104.08,
+            "matchType": "exact",
+            "confidence": 1.0
+          },
+          "children": [
+            {
+              "name": "成都城",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "蜀地中心，锦官城",
+              "historicalSignificance": "宋代蜀学重镇，苏轼、苏辙兄弟故里近此",
+              "modernMatch": {
+                "name": "成都市青羊区",
+                "province": "四川省",
+                "latitude": 30.67,
+                "longitude": 104.06,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        },
+        {
+          "name": "华阳县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "成都府附郭县之一",
+          "modernMatch": {
+            "name": "成都市武侯区",
+            "province": "四川省",
+            "latitude": 30.64,
+            "longitude": 104.04,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "广州",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "岭南重镇，南海贸易中心",
+      "historicalSignificance": "宋代设市舶司，管理海外贸易的重要港口",
+      "modernMatch": {
+        "name": "广州市",
+        "province": "广东省",
+        "latitude": 23.13,
+        "longitude": 113.26,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "南海县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "广州附郭县",
+          "historicalSignificance": "宋代海外贸易中心，蕃坊所在",
+          "modernMatch": {
+            "name": "广州市荔湾区",
+            "province": "广东省",
+            "latitude": 23.13,
+            "longitude": 113.24,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "广州城",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "岭南第一大城市",
+              "historicalSignificance": "宋代市舶司所在地，海上丝绸之路重要港口",
+              "modernMatch": {
+                "name": "广州市越秀区",
+                "province": "广东省",
+                "latitude": 23.13,
+                "longitude": 113.27,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "江陵府",
+      "alias": "荆州",
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "长江中游重镇，荆湖要地",
+      "historicalSignificance": "南宋抗金、抗蒙的战略要地",
+      "modernMatch": {
+        "name": "荆州市",
+        "province": "湖北省",
+        "latitude": 30.33,
+        "longitude": 112.24,
+        "matchType": "exact",
+        "confidence": 0.95
+      },
+      "children": [
+        {
+          "name": "江陵县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "江陵府附郭县",
+          "historicalSignificance": "南宋荆湖北路治所，长江防线核心",
+          "modernMatch": {
+            "name": "荆州市荆州区",
+            "province": "湖北省",
+            "latitude": 30.35,
+            "longitude": 112.19,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "襄阳府",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "南北要冲，荆襄门户",
+      "historicalSignificance": "南宋抗蒙前线，郭靖守襄阳的故事原型所在",
+      "modernMatch": {
+        "name": "襄阳市",
+        "province": "湖北省",
+        "latitude": 32.04,
+        "longitude": 112.14,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "襄阳县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "襄阳府附郭县",
+          "historicalSignificance": "宋元战争中坚守数十年的战略要地",
+          "modernMatch": {
+            "name": "襄阳市襄城区",
+            "province": "湖北省",
+            "latitude": 32.01,
+            "longitude": 112.13,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "襄阳城",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "南宋抗蒙前线，南北防线核心",
+              "historicalSignificance": "1267-1273年襄樊之战，坚守六年，南宋灭亡之转折点",
+              "modernMatch": {
+                "name": "襄阳市襄城区",
+                "province": "湖北省",
+                "latitude": 32.01,
+                "longitude": 112.13,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "潭州",
+      "alias": "长沙",
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "荆湖南路治所，湖湘文化中心",
+      "historicalSignificance": "岳麓书院所在，朱熹、张栻讲学之地",
+      "modernMatch": {
+        "name": "长沙市",
+        "province": "湖南省",
+        "latitude": 28.23,
+        "longitude": 112.94,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "长沙县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "潭州附郭县",
+          "historicalSignificance": "岳麓书院创建于976年，宋代四大书院之一",
+          "modernMatch": {
+            "name": "长沙市岳麓区",
+            "province": "湖南省",
+            "latitude": 28.22,
+            "longitude": 112.93,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "长沙城",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "潭州治所，湖湘文化中心",
+              "historicalSignificance": "岳麓书院所在，朱熹、张栻会讲之地，理学重镇",
+              "modernMatch": {
+                "name": "长沙市天心区",
+                "province": "湖南省",
+                "latitude": 28.12,
+                "longitude": 112.97,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "扬州",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "淮南路重镇，运河枢纽",
+      "historicalSignificance": "宋代运河沿线经济重镇，姜夔扬州慢所咏之地",
+      "modernMatch": {
+        "name": "扬州市",
+        "province": "江苏省",
+        "latitude": 32.39,
+        "longitude": 119.42,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "江都县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "扬州附郭县",
+          "historicalSignificance": "南北运河枢纽，经济发达",
+          "modernMatch": {
+            "name": "扬州市广陵区",
+            "province": "江苏省",
+            "latitude": 32.40,
+            "longitude": 119.43,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "建康府",
+      "alias": "江宁、南京",
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "六朝古都，江南要地",
+      "historicalSignificance": "南宋行都之一，江南东路治所",
+      "modernMatch": {
+        "name": "南京市",
+        "province": "江苏省",
+        "latitude": 32.06,
+        "longitude": 118.80,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "江宁县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "建康府附郭县",
+          "historicalSignificance": "南宋行都，东南军事重镇",
+          "modernMatch": {
+            "name": "南京市秦淮区",
+            "province": "江苏省",
+            "latitude": 32.02,
+            "longitude": 118.79,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "建康城",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "六朝古都，南宋行都",
+              "historicalSignificance": "岳飞曾在此抗金，辛弃疾留下了千古名篇",
+              "modernMatch": {
+                "name": "南京市鼓楼区",
+                "province": "江苏省",
+                "latitude": 32.07,
+                "longitude": 118.77,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "京兆府",
+      "alias": "长安、永兴军路",
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "关中核心，西北军事重镇",
+      "historicalSignificance": "宋代永兴军路治所，抵御西夏的前沿基地",
+      "modernMatch": {
+        "name": "西安市",
+        "province": "陕西省",
+        "latitude": 34.26,
+        "longitude": 108.93,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "长安县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "京兆府附郭县",
+          "historicalSignificance": "宋代西北军事中心，范仲淹曾经营于此",
+          "modernMatch": {
+            "name": "西安市雁塔区",
+            "province": "陕西省",
+            "latitude": 34.22,
+            "longitude": 108.96,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        },
+        {
+          "name": "万年县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "京兆府附郭县之一",
+          "modernMatch": {
+            "name": "西安市新城区",
+            "province": "陕西省",
+            "latitude": 34.27,
+            "longitude": 108.96,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "太原府",
+      "alias": "并州",
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "河东要地，北方军事重镇",
+      "historicalSignificance": "宋代抵御辽国的重要军事据点",
+      "modernMatch": {
+        "name": "太原市",
+        "province": "山西省",
+        "latitude": 37.87,
+        "longitude": 112.55,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "阳曲县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "太原府附郭县",
+          "historicalSignificance": "宋代河东军事重镇",
+          "modernMatch": {
+            "name": "太原市尖草坪区",
+            "province": "山西省",
+            "latitude": 37.94,
+            "longitude": 112.49,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "福州",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "福建路治所，闽地核心",
+      "historicalSignificance": "宋代福建路政治文化中心，朱熹讲学之地",
+      "modernMatch": {
+        "name": "福州市",
+        "province": "福建省",
+        "latitude": 26.07,
+        "longitude": 119.30,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "闽县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "福州附郭县",
+          "historicalSignificance": "南宋文化名城，朱熹闽学发源地",
+          "modernMatch": {
+            "name": "福州市鼓楼区",
+            "province": "福建省",
+            "latitude": 26.08,
+            "longitude": 119.30,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "洪州",
+      "alias": "隆兴府、南昌",
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "江南西路治所，赣地核心",
+      "historicalSignificance": "宋代江西文化中心，黄庭坚故里近此",
+      "modernMatch": {
+        "name": "南昌市",
+        "province": "江西省",
+        "latitude": 28.68,
+        "longitude": 115.86,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "南昌县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "隆兴府附郭县",
+          "modernMatch": {
+            "name": "南昌市东湖区",
+            "province": "江西省",
+            "latitude": 28.69,
+            "longitude": 115.90,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "庆元府",
+      "alias": "明州、宁波",
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "东海之滨，宋代重要港口",
+      "historicalSignificance": "宋代对日、对韩贸易的主要港口",
+      "modernMatch": {
+        "name": "宁波市",
+        "province": "浙江省",
+        "latitude": 29.87,
+        "longitude": 121.55,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "鄞县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "庆元府附郭县",
+          "historicalSignificance": "王安石曾任鄞县知县，兴修水利",
+          "modernMatch": {
+            "name": "宁波市鄞州区",
+            "province": "浙江省",
+            "latitude": 29.82,
+            "longitude": 121.56,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "绍兴府",
+      "alias": "越州",
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "越地核心，南宋皇陵所在",
+      "historicalSignificance": "宋高宗以绍兴元年改越州为绍兴府，南宋皇陵所在",
+      "modernMatch": {
+        "name": "绍兴市",
+        "province": "浙江省",
+        "latitude": 30.00,
+        "longitude": 120.58,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "会稽县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "绍兴府附郭县",
+          "historicalSignificance": "陆游故里，沈园题壁钗头凤之地",
+          "modernMatch": {
+            "name": "绍兴市越城区",
+            "province": "浙江省",
+            "latitude": 30.00,
+            "longitude": 120.58,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "信州",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "江西东路要地，人文荟萃",
+      "historicalSignificance": "辛弃疾晚年寓居之地，留下了大量名篇",
+      "modernMatch": {
+        "name": "上饶市",
+        "province": "江西省",
+        "latitude": 28.45,
+        "longitude": 117.97,
+        "matchType": "exact",
+        "confidence": 0.95
+      },
+      "children": [
+        {
+          "name": "上饶县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "信州治所",
+          "historicalSignificance": "辛弃疾铅山寓居，留下稻花香里说丰年名句",
+          "modernMatch": {
+            "name": "上饶市信州区",
+            "province": "江西省",
+            "latitude": 28.43,
+            "longitude": 117.96,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "延安府",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "陕北军事重镇，抵御西夏前线",
+      "historicalSignificance": "范仲淹、韩琦经略陕北，抵御西夏于此",
+      "modernMatch": {
+        "name": "延安市",
+        "province": "陕西省",
+        "latitude": 36.59,
+        "longitude": 109.49,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "肤施县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "延安府附郭县",
+          "historicalSignificance": "范仲淹驻守之地，宋夏战争前线",
+          "modernMatch": {
+            "name": "延安市宝塔区",
+            "province": "陕西省",
+            "latitude": 36.59,
+            "longitude": 109.49,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "庐州",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "淮南西路治所，江淮要地",
+      "historicalSignificance": "宋代淮南军事重镇",
+      "modernMatch": {
+        "name": "合肥市",
+        "province": "安徽省",
+        "latitude": 31.82,
+        "longitude": 117.23,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "合肥县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "庐州附郭县",
+          "historicalSignificance": "包拯故里，北宋名臣包拯出生于此",
+          "modernMatch": {
+            "name": "合肥市庐阳区",
+            "province": "安徽省",
+            "latitude": 31.87,
+            "longitude": 117.26,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "潼川府",
+      "alias": "梓州",
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "蜀中要地，潼川府路治所",
+      "historicalSignificance": "宋代四川地区重要行政中心",
+      "modernMatch": {
+        "name": "三台县",
+        "province": "四川省",
+        "latitude": 31.10,
+        "longitude": 105.09,
+        "matchType": "exact",
+        "confidence": 0.95
+      },
+      "children": [
+        {
+          "name": "郪县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "潼川府附郭县",
+          "modernMatch": {
+            "name": "三台县",
+            "province": "四川省",
+            "latitude": 31.10,
+            "longitude": 105.09,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "重庆府",
+      "alias": "恭州",
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "巴渝重镇，长江上游要冲",
+      "historicalSignificance": "宋光宗先封恭王后即帝位，自诩双重喜庆，升恭州为重庆府",
+      "modernMatch": {
+        "name": "重庆市",
+        "province": "重庆市",
+        "latitude": 29.56,
+        "longitude": 106.55,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "巴县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "重庆府附郭县",
+          "historicalSignificance": "南宋钓鱼城抗蒙之战，蒙哥汗战死于此",
+          "modernMatch": {
+            "name": "重庆市渝中区",
+            "province": "重庆市",
+            "latitude": 29.56,
+            "longitude": 106.55,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "静江府",
+      "alias": "桂林",
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "岭南西部重镇，山水甲天下",
+      "historicalSignificance": "南宋广南西路治所",
+      "modernMatch": {
+        "name": "桂林市",
+        "province": "广西壮族自治区",
+        "latitude": 25.27,
+        "longitude": 110.29,
+        "matchType": "exact",
+        "confidence": 1.0
+      },
+      "children": [
+        {
+          "name": "临桂县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "静江府附郭县",
+          "modernMatch": {
+            "name": "桂林市临桂区",
+            "province": "广西壮族自治区",
+            "latitude": 25.24,
+            "longitude": 110.21,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "大理国",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "西南政权，与两宋并立",
+      "historicalSignificance": "宋代西南大理国，段氏政权，与宋朝保持和平关系",
+      "modernMatch": {
+        "name": "大理市",
+        "province": "云南省",
+        "latitude": 25.59,
+        "longitude": 100.23,
+        "matchType": "exact",
+        "confidence": 0.95
+      },
+      "children": [
+        {
+          "name": "大理城",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "大理国都城",
+          "historicalSignificance": "段氏大理国国都，茶马古道重镇",
+          "modernMatch": {
+            "name": "大理市",
+            "province": "云南省",
+            "latitude": 25.59,
+            "longitude": 100.23,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "辽阳府",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "辽东重镇，辽金对峙前沿",
+      "historicalSignificance": "宋代辽东地区先后为辽、金所据",
+      "modernMatch": {
+        "name": "辽阳市",
+        "province": "辽宁省",
+        "latitude": 41.27,
+        "longitude": 123.17,
+        "matchType": "exact",
+        "confidence": 0.9
+      },
+      "children": [
+        {
+          "name": "辽阳县",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "辽阳府治所",
+          "modernMatch": {
+            "name": "辽阳市白塔区",
+            "province": "辽宁省",
+            "latitude": 41.27,
+            "longitude": 123.17,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

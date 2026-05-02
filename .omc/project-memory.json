@@ -1,0 +1,457 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1777139281464,
+  "projectRoot": "/Users/hsh/Develop/AMyProgram/ChineseHistoryTrival",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "assets",
+      "lib",
+      "test"
+    ],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "android": {
+      "path": "android",
+      "purpose": null,
+      "fileCount": 8,
+      "lastAccessed": 1777139281456,
+      "keyFiles": [
+        "build.gradle.kts",
+        "gradle.properties",
+        "gradlew",
+        "gradlew.bat",
+        "huaxia_footprint_android.iml"
+      ]
+    },
+    "assets": {
+      "path": "assets",
+      "purpose": "Static assets",
+      "fileCount": 0,
+      "lastAccessed": 1777139281456,
+      "keyFiles": []
+    },
+    "backend": {
+      "path": "backend",
+      "purpose": null,
+      "fileCount": 4,
+      "lastAccessed": 1777139281456,
+      "keyFiles": [
+        "Dockerfile",
+        "docker-compose.yml",
+        "pyproject.toml"
+      ]
+    },
+    "ios": {
+      "path": "ios",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1777139281456,
+      "keyFiles": []
+    },
+    "lib": {
+      "path": "lib",
+      "purpose": "Library code",
+      "fileCount": 1,
+      "lastAccessed": 1777139281456,
+      "keyFiles": [
+        "main.dart"
+      ]
+    },
+    "openspec": {
+      "path": "openspec",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1777139281457,
+      "keyFiles": []
+    },
+    "test": {
+      "path": "test",
+      "purpose": "Test files",
+      "fileCount": 1,
+      "lastAccessed": 1777139281457,
+      "keyFiles": [
+        "widget_test.dart"
+      ]
+    },
+    "android/app": {
+      "path": "android/app",
+      "purpose": "Application code",
+      "fileCount": 1,
+      "lastAccessed": 1777139281457,
+      "keyFiles": [
+        "build.gradle.kts"
+      ]
+    },
+    "assets/data": {
+      "path": "assets/data",
+      "purpose": "Data files",
+      "fileCount": 2,
+      "lastAccessed": 1777139281457,
+      "keyFiles": [
+        "han_dynasty_locations.json"
+      ]
+    },
+    "backend/app": {
+      "path": "backend/app",
+      "purpose": "Application code",
+      "fileCount": 4,
+      "lastAccessed": 1777139281457,
+      "keyFiles": [
+        "__init__.py",
+        "config.py",
+        "database.py"
+      ]
+    },
+    "backend/migrations": {
+      "path": "backend/migrations",
+      "purpose": "Database migrations",
+      "fileCount": 1,
+      "lastAccessed": 1777139281458,
+      "keyFiles": [
+        "env.py"
+      ]
+    },
+    "backend/tests": {
+      "path": "backend/tests",
+      "purpose": "Test files",
+      "fileCount": 1,
+      "lastAccessed": 1777139281458,
+      "keyFiles": [
+        "__init__.py"
+      ]
+    },
+    "lib/data": {
+      "path": "lib/data",
+      "purpose": "Data files",
+      "fileCount": 0,
+      "lastAccessed": 1777139281458,
+      "keyFiles": []
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "lib/presentation/pages/map/widgets/location_bottom_sheet.dart",
+      "accessCount": 22,
+      "lastAccessed": 1777183619010,
+      "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 15,
+      "lastAccessed": 1777183492908,
+      "type": "directory"
+    },
+    {
+      "path": "lib/presentation/pages/map/han_map_page.dart",
+      "accessCount": 12,
+      "lastAccessed": 1777183501883,
+      "type": "file"
+    },
+    {
+      "path": "lib/core/router/app_router.dart",
+      "accessCount": 12,
+      "lastAccessed": 1777183508124,
+      "type": "file"
+    },
+    {
+      "path": "lib/presentation/providers/locations_provider.dart",
+      "accessCount": 9,
+      "lastAccessed": 1777183625231,
+      "type": "file"
+    },
+    {
+      "path": "lib/data/local/database/app_database.dart",
+      "accessCount": 8,
+      "lastAccessed": 1777183514833,
+      "type": "file"
+    },
+    {
+      "path": "lib/data/local/daos/ancient_location_dao.dart",
+      "accessCount": 8,
+      "lastAccessed": 1777183619267,
+      "type": "file"
+    },
+    {
+      "path": "lib/presentation/pages/map/widgets/marker_factory.dart",
+      "accessCount": 7,
+      "lastAccessed": 1777183501828,
+      "type": "file"
+    },
+    {
+      "path": "lib/data/local/database/schema.dart",
+      "accessCount": 6,
+      "lastAccessed": 1777183508006,
+      "type": "file"
+    },
+    {
+      "path": "pubspec.yaml",
+      "accessCount": 5,
+      "lastAccessed": 1777141364415,
+      "type": "file"
+    },
+    {
+      "path": "lib/presentation/pages/search/search_page.dart",
+      "accessCount": 5,
+      "lastAccessed": 1777182986371,
+      "type": "file"
+    },
+    {
+      "path": "lib/presentation/pages/home/home_page.dart",
+      "accessCount": 5,
+      "lastAccessed": 1777182986493,
+      "type": "file"
+    },
+    {
+      "path": "lib/presentation/providers/current_dynasty_provider.dart",
+      "accessCount": 5,
+      "lastAccessed": 1777183155350,
+      "type": "file"
+    },
+    {
+      "path": "lib/presentation/pages/browse/xian_list_page.dart",
+      "accessCount": 5,
+      "lastAccessed": 1777183508071,
+      "type": "file"
+    },
+    {
+      "path": "lib/presentation/providers/map_state_provider.dart",
+      "accessCount": 5,
+      "lastAccessed": 1777183514780,
+      "type": "file"
+    },
+    {
+      "path": "lib/domain/entities/ancient_location.dart",
+      "accessCount": 5,
+      "lastAccessed": 1777183521399,
+      "type": "file"
+    },
+    {
+      "path": "lib/presentation/providers/database_provider.dart",
+      "accessCount": 5,
+      "lastAccessed": 1777183521557,
+      "type": "file"
+    },
+    {
+      "path": "assets/data/han_dynasty_locations.json",
+      "accessCount": 4,
+      "lastAccessed": 1777140535645,
+      "type": "file"
+    },
+    {
+      "path": "lib/data/seed/data_seeder.dart",
+      "accessCount": 3,
+      "lastAccessed": 1777140582760,
+      "type": "file"
+    },
+    {
+      "path": "lib/domain/enums/admin_level.dart",
+      "accessCount": 3,
+      "lastAccessed": 1777142145301,
+      "type": "file"
+    },
+    {
+      "path": "lib/presentation/providers/location_provider.dart",
+      "accessCount": 3,
+      "lastAccessed": 1777182878376,
+      "type": "file"
+    },
+    {
+      "path": "lib/data/local/daos/dynasty_dao.dart",
+      "accessCount": 3,
+      "lastAccessed": 1777182923222,
+      "type": "file"
+    },
+    {
+      "path": "lib/data/local/daos/location_match_dao.dart",
+      "accessCount": 3,
+      "lastAccessed": 1777182923298,
+      "type": "file"
+    },
+    {
+      "path": "lib/domain/entities/modern_location.dart",
+      "accessCount": 3,
+      "lastAccessed": 1777182971741,
+      "type": "file"
+    },
+    {
+      "path": "lib/domain/entities/dynasty.dart",
+      "accessCount": 3,
+      "lastAccessed": 1777182971845,
+      "type": "file"
+    },
+    {
+      "path": "lib/domain/entities/location_match.dart",
+      "accessCount": 3,
+      "lastAccessed": 1777182972100,
+      "type": "file"
+    },
+    {
+      "path": "lib/presentation/providers/visible_markers_provider.dart",
+      "accessCount": 3,
+      "lastAccessed": 1777183514884,
+      "type": "file"
+    },
+    {
+      "path": "lib/core/widgets/dynasty_badge.dart",
+      "accessCount": 2,
+      "lastAccessed": 1777140656240,
+      "type": "file"
+    },
+    {
+      "path": "lib/core/widgets/classical_card.dart",
+      "accessCount": 2,
+      "lastAccessed": 1777140656347,
+      "type": "file"
+    },
+    {
+      "path": "lib/core/theme/app_colors.dart",
+      "accessCount": 2,
+      "lastAccessed": 1777140664652,
+      "type": "file"
+    },
+    {
+      "path": "lib/core/theme/app_typography.dart",
+      "accessCount": 2,
+      "lastAccessed": 1777140664708,
+      "type": "file"
+    },
+    {
+      "path": "lib/main.dart",
+      "accessCount": 2,
+      "lastAccessed": 1777141469736,
+      "type": "file"
+    },
+    {
+      "path": "lib/core/widgets/classical_app_bar.dart",
+      "accessCount": 2,
+      "lastAccessed": 1777141577463,
+      "type": "file"
+    },
+    {
+      "path": "lib/presentation/providers/matching_provider.dart",
+      "accessCount": 2,
+      "lastAccessed": 1777182878510,
+      "type": "file"
+    },
+    {
+      "path": "lib/data/local/daos/modern_location_dao.dart",
+      "accessCount": 2,
+      "lastAccessed": 1777182923352,
+      "type": "file"
+    },
+    {
+      "path": "lib/data/repositories/matching_repository.dart",
+      "accessCount": 2,
+      "lastAccessed": 1777182971833,
+      "type": "file"
+    },
+    {
+      "path": "lib/presentation/pages/browse/zhou_list_page.dart",
+      "accessCount": 2,
+      "lastAccessed": 1777182986309,
+      "type": "file"
+    },
+    {
+      "path": "lib/presentation/pages/browse/jun_list_page.dart",
+      "accessCount": 2,
+      "lastAccessed": 1777182986354,
+      "type": "file"
+    },
+    {
+      "path": "lib/presentation/pages/splash/splash_page.dart",
+      "accessCount": 2,
+      "lastAccessed": 1777182998727,
+      "type": "file"
+    },
+    {
+      "path": "README.md",
+      "accessCount": 1,
+      "lastAccessed": 1777139622330,
+      "type": "file"
+    },
+    {
+      "path": "lib/domain/enums/match_source.dart",
+      "accessCount": 1,
+      "lastAccessed": 1777139658144,
+      "type": "file"
+    },
+    {
+      "path": "lib/data/repositories/location_repository.dart",
+      "accessCount": 1,
+      "lastAccessed": 1777139658162,
+      "type": "file"
+    },
+    {
+      "path": "lib/core/theme/app_theme.dart",
+      "accessCount": 1,
+      "lastAccessed": 1777139658192,
+      "type": "file"
+    },
+    {
+      "path": "lib/data/services/ai_matching_service.dart",
+      "accessCount": 1,
+      "lastAccessed": 1777139658222,
+      "type": "file"
+    },
+    {
+      "path": "lib/domain/enums/match_type.dart",
+      "accessCount": 1,
+      "lastAccessed": 1777139658354,
+      "type": "file"
+    },
+    {
+      "path": "test/widget_test.dart",
+      "accessCount": 1,
+      "lastAccessed": 1777139667499,
+      "type": "file"
+    },
+    {
+      "path": "lib/presentation/pages/map/widgets/admin_level_chips.dart",
+      "accessCount": 1,
+      "lastAccessed": 1777139667513,
+      "type": "file"
+    },
+    {
+      "path": "lib/presentation/pages/map/widgets/quick_jump_buttons.dart",
+      "accessCount": 1,
+      "lastAccessed": 1777139667525,
+      "type": "file"
+    },
+    {
+      "path": "lib/presentation/pages/map/widgets/map_search_bar.dart",
+      "accessCount": 1,
+      "lastAccessed": 1777139667570,
+      "type": "file"
+    },
+    {
+      "path": "lib/core/widgets/loading_ink_wash.dart",
+      "accessCount": 1,
+      "lastAccessed": 1777139667729,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

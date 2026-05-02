@@ -1,0 +1,1024 @@
+{
+  "seedVersion": 1,
+  "dynasty": {
+    "name": "唐朝",
+    "nameEn": "Tang Dynasty",
+    "startYear": 618,
+    "endYear": 907,
+    "subPeriod": "初唐/盛唐/中唐/晚唐",
+    "description": "中国历史上最繁荣的朝代之一，以其开放包容的文化政策和辉煌的文学成就闻名于世"
+  },
+  "locations": [
+    {
+      "name": "关内道",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "唐朝核心区域，京畿所在，全国政治中心",
+      "historicalSignificance": "唐都长安所在，贞观之治、开元盛世的施政中心",
+      "modernMatch": {
+        "name": "西安市",
+        "province": "陕西省",
+        "latitude": 34.26,
+        "longitude": 108.93,
+        "matchType": "regional",
+        "confidence": 0.8,
+        "notes": "关内道范围涵盖今陕西中部及甘肃东部"
+      },
+      "children": [
+        {
+          "name": "京兆府",
+          "alias": "长安",
+          "adminLevel": "jun",
+          "description": "唐都所在，天下第一城",
+          "yearEstablished": 618,
+          "historicalSignificance": "唐朝国都，人口过百万的世界最大城市",
+          "modernMatch": {
+            "name": "西安市",
+            "province": "陕西省",
+            "latitude": 34.26,
+            "longitude": 108.93,
+            "matchType": "exact",
+            "confidence": 1.0
+          },
+          "children": [
+            {
+              "name": "长安城",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "大唐国都，百万人口的国际大都市",
+              "yearEstablished": 618,
+              "historicalSignificance": "丝绸之路东方起点，当时世界上最大的城市，东西方文化交汇中心",
+              "modernMatch": {
+                "name": "西安市雁塔区",
+                "province": "陕西省",
+                "latitude": 34.22,
+                "longitude": 108.96,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            },
+            {
+              "name": "大明宫",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "唐太宗以来历代皇帝朝政之所",
+              "yearEstablished": 634,
+              "historicalSignificance": "唐代最大的宫殿群，政治中心，含元殿、麟德殿所在",
+              "modernMatch": {
+                "name": "西安市新城区",
+                "province": "陕西省",
+                "latitude": 34.27,
+                "longitude": 108.96,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "华州",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "关中东部要冲，西岳华山所在",
+          "historicalSignificance": "关中门户，潼关所在，扼守长安东大门",
+          "modernMatch": {
+            "name": "华阴市",
+            "province": "陕西省",
+            "latitude": 34.57,
+            "longitude": 110.09,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": [
+            {
+              "name": "郑县",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "华州治所，潼关近郊",
+              "historicalSignificance": "安史之乱中哥舒翰兵败潼关，关中告急",
+              "modernMatch": {
+                "name": "华州区",
+                "province": "陕西省",
+                "latitude": 34.51,
+                "longitude": 109.77,
+                "matchType": "exact",
+                "confidence": 0.9
+              }
+            }
+          ]
+        },
+        {
+          "name": "同州",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "关中东部，渭水与洛水交汇处",
+          "modernMatch": {
+            "name": "大荔县",
+            "province": "陕西省",
+            "latitude": 34.80,
+            "longitude": 109.94,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "河南道",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "中原腹地，东都洛阳所在",
+      "historicalSignificance": "唐代经济文化重地，东都洛阳为全国第二政治中心",
+      "modernMatch": {
+        "name": "洛阳市",
+        "province": "河南省",
+        "latitude": 34.62,
+        "longitude": 112.45,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "河南道范围涵盖今河南大部及山东西部"
+      },
+      "children": [
+        {
+          "name": "河南府",
+          "alias": "洛阳",
+          "adminLevel": "jun",
+          "description": "东都所在，武周神都",
+          "yearEstablished": 618,
+          "historicalSignificance": "武则天改称神都，唐代第二政治中心，牡丹花都",
+          "modernMatch": {
+            "name": "洛阳市",
+            "province": "河南省",
+            "latitude": 34.62,
+            "longitude": 112.45,
+            "matchType": "exact",
+            "confidence": 1.0
+          },
+          "children": [
+            {
+              "name": "洛阳城",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "东都洛阳，隋唐大运河中心",
+              "historicalSignificance": "武则天长期执政于此，白马寺、龙门石窟所在",
+              "modernMatch": {
+                "name": "洛阳市老城区",
+                "province": "河南省",
+                "latitude": 34.68,
+                "longitude": 112.47,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "陕州",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "崤函古道要冲，长安与洛阳之间",
+          "historicalSignificance": "两京之间交通枢纽，唐代行宫所在",
+          "modernMatch": {
+            "name": "三门峡市",
+            "province": "河南省",
+            "latitude": 34.77,
+            "longitude": 111.20,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "汴州",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "汴水要冲，漕运枢纽",
+          "historicalSignificance": "大运河重镇，后来成为五代与北宋都城",
+          "modernMatch": {
+            "name": "开封市",
+            "province": "河南省",
+            "latitude": 34.80,
+            "longitude": 114.30,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "开封",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "汴州治所，运河重镇",
+              "historicalSignificance": "唐代漕运中心，后为五代及北宋国都",
+              "modernMatch": {
+                "name": "开封市",
+                "province": "河南省",
+                "latitude": 34.80,
+                "longitude": 114.30,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "河东道",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "黄河以东，表里山河",
+      "historicalSignificance": "李唐龙兴之地，李世民起兵太原",
+      "modernMatch": {
+        "name": "太原市",
+        "province": "山西省",
+        "latitude": 37.87,
+        "longitude": 112.55,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "河东道范围涵盖今山西省大部"
+      },
+      "children": [
+        {
+          "name": "太原府",
+          "alias": "并州",
+          "adminLevel": "jun",
+          "description": "李唐龙兴之地，北都",
+          "yearEstablished": 618,
+          "historicalSignificance": "李渊起兵反隋于此，武则天亦为并州人氏",
+          "modernMatch": {
+            "name": "太原市",
+            "province": "山西省",
+            "latitude": 37.87,
+            "longitude": 112.55,
+            "matchType": "exact",
+            "confidence": 1.0
+          },
+          "children": [
+            {
+              "name": "晋阳",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "太原府治所，唐朝北都",
+              "historicalSignificance": "李渊李世民起兵之地，唐代北都，安史之乱中惨遭毁坏",
+              "modernMatch": {
+                "name": "太原市晋源区",
+                "province": "山西省",
+                "latitude": 37.72,
+                "longitude": 112.48,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        },
+        {
+          "name": "蒲州",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "河东要地，蒲津渡所在",
+          "historicalSignificance": "黄河重要渡口，关中与河东往来要冲",
+          "modernMatch": {
+            "name": "永济市",
+            "province": "山西省",
+            "latitude": 34.87,
+            "longitude": 110.45,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "绛州",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "河东南部，商贸繁盛",
+          "modernMatch": {
+            "name": "新绛县",
+            "province": "山西省",
+            "latitude": 35.62,
+            "longitude": 111.22,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "河北道",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "黄河以北，幽燕之地",
+      "historicalSignificance": "安史之乱策源地，藩镇割据核心区域",
+      "modernMatch": {
+        "name": "北京市",
+        "province": "北京市",
+        "latitude": 39.90,
+        "longitude": 116.40,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "河北道范围涵盖今河北、北京、天津及辽宁西部"
+      },
+      "children": [
+        {
+          "name": "幽州",
+          "alias": "范阳郡",
+          "adminLevel": "jun",
+          "description": "河北道重镇，安禄山老巢",
+          "historicalSignificance": "安史之乱策源地，安禄山任范阳节度使驻此",
+          "modernMatch": {
+            "name": "北京市",
+            "province": "北京市",
+            "latitude": 39.90,
+            "longitude": 116.40,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "蓟",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "幽州治所，北方军事重镇",
+              "historicalSignificance": "安禄山、史思明于此起兵叛唐",
+              "modernMatch": {
+                "name": "北京市西城区",
+                "province": "北京市",
+                "latitude": 39.91,
+                "longitude": 116.37,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        },
+        {
+          "name": "魏州",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "河北南部重镇，田承嗣割据之地",
+          "historicalSignificance": "河朔三镇之一魏博镇治所",
+          "modernMatch": {
+            "name": "大名县",
+            "province": "河北省",
+            "latitude": 36.30,
+            "longitude": 115.15,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "镇州",
+          "alias": "常山郡",
+          "adminLevel": "jun",
+          "description": "河北中部要地",
+          "historicalSignificance": "河朔三镇之一成德镇治所",
+          "modernMatch": {
+            "name": "正定县",
+            "province": "河北省",
+            "latitude": 38.15,
+            "longitude": 114.57,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "山南道",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "秦岭以南，荆襄之地",
+      "historicalSignificance": "连接关中与江南的通道，战略要地",
+      "modernMatch": {
+        "name": "襄阳市",
+        "province": "湖北省",
+        "latitude": 32.04,
+        "longitude": 112.14,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "山南道范围涵盖今湖北西北部及陕西南部"
+      },
+      "children": [
+        {
+          "name": "襄州",
+          "alias": "襄阳郡",
+          "adminLevel": "jun",
+          "description": "南北要冲，荆襄门户",
+          "historicalSignificance": "唐代军事重镇，安史之乱中保全南方之关键",
+          "modernMatch": {
+            "name": "襄阳市",
+            "province": "湖北省",
+            "latitude": 32.04,
+            "longitude": 112.14,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": [
+            {
+              "name": "襄阳",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "襄州治所，南北交通枢纽",
+              "historicalSignificance": "唐代名相张九龄、孟浩然故里",
+              "modernMatch": {
+                "name": "襄阳市襄城区",
+                "province": "湖北省",
+                "latitude": 32.01,
+                "longitude": 112.13,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        },
+        {
+          "name": "荆州",
+          "alias": "江陵府",
+          "adminLevel": "jun",
+          "description": "长江中游重镇",
+          "historicalSignificance": "唐代南方军事重镇，江陵尹管领数州",
+          "modernMatch": {
+            "name": "荆州市",
+            "province": "湖北省",
+            "latitude": 30.33,
+            "longitude": 112.24,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "陇右道",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "陇山以西，丝路要道",
+      "historicalSignificance": "唐代经营西域的前沿基地，丝绸之路核心路段",
+      "modernMatch": {
+        "name": "天水市",
+        "province": "甘肃省",
+        "latitude": 34.58,
+        "longitude": 105.72,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "陇右道范围涵盖今甘肃大部及青海东部"
+      },
+      "children": [
+        {
+          "name": "敦煌郡",
+          "alias": "沙州",
+          "adminLevel": "jun",
+          "description": "丝路咽喉，莫高窟所在",
+          "historicalSignificance": "唐代佛教艺术巅峰莫高窟所在，中西文化交流枢纽",
+          "modernMatch": {
+            "name": "敦煌市",
+            "province": "甘肃省",
+            "latitude": 40.14,
+            "longitude": 94.66,
+            "matchType": "exact",
+            "confidence": 1.0
+          },
+          "children": [
+            {
+              "name": "敦煌",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "沙州治所，丝路明珠",
+              "historicalSignificance": "唐代中西贸易与文化交流枢纽，莫高窟千佛洞所在",
+              "modernMatch": {
+                "name": "敦煌市",
+                "province": "甘肃省",
+                "latitude": 40.14,
+                "longitude": 94.66,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "天水郡",
+          "alias": "秦州",
+          "adminLevel": "jun",
+          "description": "陇右要地，丝路重镇",
+          "historicalSignificance": "陇右第一重镇，唐代西北军事要地",
+          "modernMatch": {
+            "name": "天水市",
+            "province": "甘肃省",
+            "latitude": 34.58,
+            "longitude": 105.72,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        },
+        {
+          "name": "武威郡",
+          "alias": "凉州",
+          "adminLevel": "jun",
+          "description": "河西走廊东端要冲",
+          "historicalSignificance": "唐代河西节度使驻地，王之涣凉州词所咏之地",
+          "modernMatch": {
+            "name": "武威市",
+            "province": "甘肃省",
+            "latitude": 37.93,
+            "longitude": 102.64,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "淮南道",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "淮河以南，长江以北，南北交汇之地",
+      "historicalSignificance": "唐代经济发达地区，漕运枢纽",
+      "modernMatch": {
+        "name": "扬州市",
+        "province": "江苏省",
+        "latitude": 32.39,
+        "longitude": 119.42,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "淮南道范围涵盖今江苏、安徽中南部"
+      },
+      "children": [
+        {
+          "name": "扬州",
+          "alias": "广陵郡",
+          "adminLevel": "jun",
+          "description": "东南第一大都会",
+          "historicalSignificance": "唐代最繁华的商业城市，李白烟花三月下扬州",
+          "modernMatch": {
+            "name": "扬州市",
+            "province": "江苏省",
+            "latitude": 32.39,
+            "longitude": 119.42,
+            "matchType": "exact",
+            "confidence": 1.0
+          },
+          "children": [
+            {
+              "name": "江都",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "扬州治所，东南繁华之最",
+              "historicalSignificance": "唐代盐铁转运中心，商贾云集，天下第一繁华之地",
+              "modernMatch": {
+                "name": "扬州市广陵区",
+                "province": "江苏省",
+                "latitude": 32.40,
+                "longitude": 119.43,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "楚州",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "淮河下游，运河要冲",
+          "modernMatch": {
+            "name": "淮安市",
+            "province": "江苏省",
+            "latitude": 33.55,
+            "longitude": 119.01,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "庐州",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "淮南西部重镇",
+          "modernMatch": {
+            "name": "合肥市",
+            "province": "安徽省",
+            "latitude": 31.82,
+            "longitude": 117.23,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "江南道",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "长江以南，江南富庶之地",
+      "historicalSignificance": "唐代经济重心南移的核心区域，鱼米之乡",
+      "modernMatch": {
+        "name": "苏州市",
+        "province": "江苏省",
+        "latitude": 31.30,
+        "longitude": 120.62,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "江南道范围极广，涵盖今江苏南部、浙江、福建、江西、湖南等地"
+      },
+      "children": [
+        {
+          "name": "苏州",
+          "alias": "吴郡",
+          "adminLevel": "jun",
+          "description": "江南第一名城，上有天堂下有苏杭",
+          "historicalSignificance": "唐代江南经济文化中心，白居易曾任苏州刺史",
+          "modernMatch": {
+            "name": "苏州市",
+            "province": "江苏省",
+            "latitude": 31.30,
+            "longitude": 120.62,
+            "matchType": "exact",
+            "confidence": 1.0
+          },
+          "children": [
+            {
+              "name": "吴县",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "苏州治所，江南水乡代表",
+              "historicalSignificance": "唐代经济最发达的县之一，丝织业中心",
+              "modernMatch": {
+                "name": "苏州市姑苏区",
+                "province": "江苏省",
+                "latitude": 31.30,
+                "longitude": 120.62,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "杭州",
+          "alias": "余杭郡",
+          "adminLevel": "jun",
+          "description": "钱塘江畔，东南形胜",
+          "historicalSignificance": "白居易筑白堤于此，后为吴越国及南宋都城",
+          "modernMatch": {
+            "name": "杭州市",
+            "province": "浙江省",
+            "latitude": 30.27,
+            "longitude": 120.15,
+            "matchType": "exact",
+            "confidence": 1.0
+          },
+          "children": [
+            {
+              "name": "钱塘",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "杭州治所，钱塘江畔",
+              "historicalSignificance": "白居易任杭州刺史期间兴修水利，造福一方",
+              "modernMatch": {
+                "name": "杭州市上城区",
+                "province": "浙江省",
+                "latitude": 30.24,
+                "longitude": 120.17,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        },
+        {
+          "name": "越州",
+          "alias": "会稽郡",
+          "adminLevel": "jun",
+          "description": "越地核心，鉴湖所在",
+          "historicalSignificance": "唐代越窑青瓷产地，绍兴酒起源地",
+          "modernMatch": {
+            "name": "绍兴市",
+            "province": "浙江省",
+            "latitude": 30.00,
+            "longitude": 120.58,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        },
+        {
+          "name": "洪州",
+          "alias": "豫章郡",
+          "adminLevel": "jun",
+          "description": "江南西部重镇",
+          "historicalSignificance": "王勃滕王阁序所咏之地，江南名楼滕王阁所在",
+          "modernMatch": {
+            "name": "南昌市",
+            "province": "江西省",
+            "latitude": 28.68,
+            "longitude": 115.86,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "剑南道",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "剑阁以南，天府之国",
+      "historicalSignificance": "唐代西南重地，益州为南京，物产丰饶",
+      "modernMatch": {
+        "name": "成都市",
+        "province": "四川省",
+        "latitude": 30.57,
+        "longitude": 104.07,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "剑南道范围涵盖今四川大部及云南北部"
+      },
+      "children": [
+        {
+          "name": "成都府",
+          "alias": "蜀郡",
+          "adminLevel": "jun",
+          "description": "天府之国核心，锦官城",
+          "historicalSignificance": "唐代南京，杜甫草堂所在，蜀锦名扬天下",
+          "modernMatch": {
+            "name": "成都市",
+            "province": "四川省",
+            "latitude": 30.57,
+            "longitude": 104.07,
+            "matchType": "exact",
+            "confidence": 1.0
+          },
+          "children": [
+            {
+              "name": "成都",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "成都府治所，锦官城",
+              "historicalSignificance": "杜甫流寓于此创作大量诗篇，蜀锦织造中心",
+              "modernMatch": {
+                "name": "成都市锦江区",
+                "province": "四川省",
+                "latitude": 30.57,
+                "longitude": 104.08,
+                "matchType": "exact",
+                "confidence": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "name": "益州",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "剑南核心，唐南京",
+          "historicalSignificance": "唐代五府之一，西南经济文化中心",
+          "modernMatch": {
+            "name": "成都市",
+            "province": "四川省",
+            "latitude": 30.57,
+            "longitude": 104.07,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        },
+        {
+          "name": "绵州",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "剑南北部要地",
+          "historicalSignificance": "李白故里，唐代文化名城",
+          "modernMatch": {
+            "name": "绵阳市",
+            "province": "四川省",
+            "latitude": 31.47,
+            "longitude": 104.68,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "岭南道",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "五岭以南，南海之滨",
+      "historicalSignificance": "唐代对外贸易窗口，海上丝绸之路起点",
+      "modernMatch": {
+        "name": "广州市",
+        "province": "广东省",
+        "latitude": 23.13,
+        "longitude": 113.26,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "岭南道范围涵盖今广东、广西及越南北部"
+      },
+      "children": [
+        {
+          "name": "广州",
+          "alias": "南海郡",
+          "adminLevel": "jun",
+          "description": "岭南第一大城市，海上丝路起点",
+          "historicalSignificance": "唐代最大的对外贸易港口，设市舶司管理海外贸易",
+          "modernMatch": {
+            "name": "广州市",
+            "province": "广东省",
+            "latitude": 23.13,
+            "longitude": 113.26,
+            "matchType": "exact",
+            "confidence": 1.0
+          },
+          "children": [
+            {
+              "name": "番禺",
+              "alias": null,
+              "adminLevel": "xian",
+              "description": "广州治所，南海贸易中心",
+              "historicalSignificance": "唐代蕃坊所在，阿拉伯、波斯商人云集之地",
+              "modernMatch": {
+                "name": "广州市番禺区",
+                "province": "广东省",
+                "latitude": 22.94,
+                "longitude": 113.38,
+                "matchType": "exact",
+                "confidence": 0.95
+              }
+            }
+          ]
+        },
+        {
+          "name": "桂州",
+          "alias": "始安郡",
+          "adminLevel": "jun",
+          "description": "岭南西部重镇，山水甲天下",
+          "historicalSignificance": "唐代桂管经略使驻地，韩愈曾咏桂林山水",
+          "modernMatch": {
+            "name": "桂林市",
+            "province": "广西壮族自治区",
+            "latitude": 25.27,
+            "longitude": 110.29,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        },
+        {
+          "name": "容州",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "岭南中部要地",
+          "modernMatch": {
+            "name": "容县",
+            "province": "广西壮族自治区",
+            "latitude": 22.86,
+            "longitude": 110.55,
+            "matchType": "exact",
+            "confidence": 0.85
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "黔中道",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "西南边陲，山川险阻",
+      "historicalSignificance": "唐代西南少数民族聚居区，羁縻州所在",
+      "modernMatch": {
+        "name": "重庆市",
+        "province": "重庆市",
+        "latitude": 29.56,
+        "longitude": 106.55,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "黔中道范围涵盖今重庆南部及贵州大部"
+      },
+      "children": [
+        {
+          "name": "黔州",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "黔中道治所",
+          "historicalSignificance": "唐代黔中道政治中心",
+          "modernMatch": {
+            "name": "彭水县",
+            "province": "重庆市",
+            "latitude": 29.29,
+            "longitude": 108.17,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        },
+        {
+          "name": "涪州",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "长江沿岸要地",
+          "modernMatch": {
+            "name": "涪陵区",
+            "province": "重庆市",
+            "latitude": 29.70,
+            "longitude": 107.39,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "河西道",
+      "alias": null,
+      "adminLevel": "zhou",
+      "parentLocationName": null,
+      "description": "河西走廊，丝路干道",
+      "historicalSignificance": "唐代经营西域的军事前沿，河西节度使驻此",
+      "modernMatch": {
+        "name": "武威市",
+        "province": "甘肃省",
+        "latitude": 37.93,
+        "longitude": 102.64,
+        "matchType": "regional",
+        "confidence": 0.7,
+        "notes": "河西道涵盖河西走廊地区"
+      },
+      "children": [
+        {
+          "name": "张掖郡",
+          "alias": "甘州",
+          "adminLevel": "jun",
+          "description": "河西走廊中部重镇",
+          "historicalSignificance": "丝路干道要冲，唐代河西节度使辖地",
+          "modernMatch": {
+            "name": "张掖市",
+            "province": "甘肃省",
+            "latitude": 38.93,
+            "longitude": 100.45,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        },
+        {
+          "name": "酒泉郡",
+          "alias": "肃州",
+          "adminLevel": "jun",
+          "description": "河西走廊西端",
+          "historicalSignificance": "丝路重镇，唐代边塞诗常见意象",
+          "modernMatch": {
+            "name": "酒泉市",
+            "province": "甘肃省",
+            "latitude": 39.74,
+            "longitude": 98.49,
+            "matchType": "exact",
+            "confidence": 0.95
+          },
+          "children": []
+        },
+        {
+          "name": "安西都护府",
+          "alias": null,
+          "adminLevel": "jun",
+          "description": "唐代西域最高军政机构",
+          "yearEstablished": 640,
+          "historicalSignificance": "唐太宗设安西都护府，统辖西域四镇，维护丝路畅通",
+          "modernMatch": {
+            "name": "库车市",
+            "province": "新疆维吾尔自治区",
+            "latitude": 41.72,
+            "longitude": 82.96,
+            "matchType": "exact",
+            "confidence": 0.9
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}
